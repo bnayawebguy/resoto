@@ -37,4 +37,9 @@
 		}
 	?>
 
+	<?php do_action( 'resoto_hb_search_rooms' ); ?>
+
+	<?php do_action( 'resoto_page_banner' ); ?>
+
 	<div id="content" class="site-content">
+		<div class="rcontainer">

@@ -387,7 +387,7 @@ template {
 }
 
 /*--------------------------------------------------------------
-# Typography
+# Typography: ;
 --------------------------------------------------------------*/
 body,
 button,
@@ -395,15 +395,16 @@ input,
 select,
 optgroup,
 textarea {
-	color: #404040;
-	font-family: 'Work Sans', sans-serif;
-	font-size: 16px;
-	font-size: 1rem;
-	line-height: 1.5;
+	color: #616161;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 27px;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
+	font-family: 'Poppins', sans-serif;
 }
 
 p {
@@ -614,7 +615,8 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	text-decoration: none;
+	color: #616161;
 }
 
 a:visited {
@@ -1024,17 +1026,21 @@ object {
 
 /** Header Style **/
 header .main-navigation ul li a {
-	text-decoration: none;
-	color: #616161;
-	font-size: 18px;
+    text-decoration: none;
+    color: #616161;
+    font-size: 14px;
+    font-weight: 500;
 }
 
-header .site-branding h1.site-title {
+header .site-branding h1.site-title,
+header .site-branding p.site-title {
+	font-size: 40px;
     margin: 0px;
     font-weight: 800;
 }
 
-header .site-branding h1.site-title a {
+header .site-branding h1.site-title a,
+header .site-branding p.site-title a {
     text-decoration: none;
     color: #6b6b6b;
     text-transform: uppercase;
@@ -1088,8 +1094,9 @@ header.layout1 .main-navigation ul li:last-child a:after {
 }
 
 header.layout1 .main-navigation ul ul {
-	display: flex;
-	flex-flow: column;
+    display: flex;
+    flex-flow: column;
+    background: #fff;
 }
 
 header.layout1 .main-navigation ul ul li a {
@@ -1177,32 +1184,41 @@ header.layout2 .main-header .rcontainer .main-navigation ul ul li {
 }
 
 .resoto-slider .caption-text {
-    padding: 230px 0px;
+    padding: 180px 0px;
 }
 
-.resoto-slider .caption-text .text * {
+.resoto-slider .caption-text .slide-title {
     margin: 0;
     padding: 0;
+    font-size: 50px;
+    position: relative;
+    font-weight: 800;
+    color: #484848;
 }
 
-.resoto-slider .caption-text .subtitle {
+.resoto-slider .caption-text .slide-title span {
     font-size: 18px;
-    position: relative;
+    display: block;
+    margin-bottom: 20px;
+    font-weight: 500;
 }
 
 .resoto-slider .caption-text .text {
-    font-family: 'Playfair Display', sans-serif;
-    font-size: 50px;
-    font-weight: 600;
+    width: 500px;
+    margin-top: 35px;
 }
 
 .slide-btn {
     display: inline-block;
     color: #fff;
-    background-color: #b98339;
+    background-color: #ec6a2a;
     padding: 12px 35px;
     text-decoration: none;
     margin-top: 40px;
+}
+
+.slide-btn:hover, .slide-btn:focus, .slide-btn:active, .slide-btn:visited {
+	color: #fff;
 }
 
 .slide-btn i{
@@ -1219,10 +1235,252 @@ header.layout2 .main-header .rcontainer .main-navigation ul ul li {
 .resoto-slider .owl-nav span {
     padding: 20px 25px;
     border-radius: 50%;
-    background-color: #b98339;
+    background-color: #ec6a2a;
     color: #fff;
 }
 
 .resoto-slider .owl-nav span.owl-prev {
 	margin-right: 20px;
 }
+
+.resoto-slider .owl-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+}
+
+.resoto-slider .owl-dots button.owl-dot {
+    background-color: rgba(185, 131, 57, 0.38);
+    width: 40px;
+    height: 5px;
+    transition: 0.5s all ease;
+}
+
+.resoto-slider .owl-dots button.owl-dot.active,
+.resoto-slider .owl-dots button.owl-dot:hover {
+    background: #ec6a2a;
+}
+
+.resoto-slider .owl-dots button:first-child {
+    margin-right: 10px;
+}
+
+/** Hotel Search Rooms **/
+.resoto-hb-search-room .hotel-booking-search * {
+	margin: 0;
+}
+
+.resoto-hb-search-room form {
+    display: flex;
+    align-items: center;
+}
+
+.resoto-hb-search-room ul.hb-form-table {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.resoto-hb-search-room .hb_input_field:after {
+	display: none;
+}
+
+/** Page Banner **/
+.resoto-banner {
+    text-align: center;
+    background-size: cover;
+    padding: 80px 0;
+}
+
+.resoto-banner h2.page-title {
+    margin: 0;
+}
+
+.resoto-banner ul {
+    list-style: none;
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.resoto-banner ul a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.resoto-banner ul a:after {
+    content: "\ea46";
+    font-family: lineicons;
+    margin: 0 8px;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+/** Content **/
+#content .rcontainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+body.right-sidebar #primary {
+	width: 70%;
+}
+
+body.right-sidebar #secondary {
+	width: 25%;
+}
+
+body.no-sidebar #primary {
+	width: 100%;
+}
+
+/** Blog Page Styles **/
+body.blog-layout1 article{
+	margin-top: 40px;
+}
+
+body.blog-layout1 article .post-metas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+body.blog-layout1 article .post-image {
+    max-height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+body.blog-layout1 article .post-metas > span {
+    margin-right: 35px;
+    position: relative;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+body.blog-layout1 article .post-metas > span:last-child {
+	margin-right: 0;
+}
+
+body.blog-layout1 article .post-metas > span::after {
+    content: "";
+    height: 6px;
+    width: 6px;
+    background: #c3c3c3;
+    position: absolute;
+    top: 50%;
+    border-radius: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+}
+
+body.blog-layout1 article .post-metas > span:last-child::after {
+	display: none;
+}
+
+body.blog-layout1 article .post-metas .posted-by {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+body.blog-layout1 article .post-metas .posted-by img {
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+body.blog-layout1 article a.readmore-btn {
+    display: inline-block;
+    color: #fff;
+    background-color: #ec6a2a;
+    padding: 12px 35px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+body.blog-layout1 article .entry-content {
+	margin-top: 20px;
+}
+
+/** Footer Styles **/
+.footer-social-links {
+    background: #3d96d0;
+    padding: 80px 0px;
+    text-align: center;
+}
+
+.footer-social-links h3.social-links-heading {
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    margin: 0;
+}
+
+.footer-social-links ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 60px;
+    justify-content: space-around;
+}
+
+.footer-social-links ul li a {
+    display: block;
+    background: #292929;
+    font-size: 25px;
+    color: #fff;
+    border-radius: 20px;
+    width: 80px;
+    height: 75px;
+    line-height: 75px;
+}
+
+.footer-social-links ul li > span {
+    margin-top: 10px;
+    color: #fff;
+}
+
+.bottom-footer {
+    text-align: center;
+    padding: 50px 0px;
+    background-color: #292929;
+    color: #b1b1b1;
+}
+
+.bottom-footer ul.menu {
+    display: inline-flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.bottom-footer ul.menu li a {
+    text-decoration: none;
+    color: inherit;
+    margin: 0px 40px;
+    font-weight: 600;
+    color: #b1b1b1;
+}
+
+.bottom-footer .site-info {
+    margin-top: 20px;
+    position: relative;
+}
+
+/* .bottom-footer .site-info:before {
+    content: "";
+    height: 2px;
+    width: 40px;
+    position: absolute;
+    background: #b1b1b1;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    margin-bottom: 20px;
+} */

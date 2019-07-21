@@ -17,10 +17,17 @@ function resoto_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
-	// Adds a class of no-sidebar when there is no sidebar present.
-	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-		$classes[] = 'no-sidebar';
+	global $post;
+	$resoto_page_layout = 'no-sidebar';
+	if( is_page( $post ) ) {
+		$resoto_page_layout = ( get_post_meta( $post->ID, 'resoto_page_layout', true ) ) ? get_post_meta( $post->ID, 'resoto_page_layout', true ) : 'no-sidebar';
+	} elseif( is_archive() || is_home() ) {
+		$resoto_page_layout = get_theme_mod( 'resoto_blog_sidebar_layout', 'no-sidebar' );
+
+		$blog_layout = get_theme_mod( 'resoto_blog_layout', 'layout1' );
+		$classes[] = 'blog-' . esc_attr($blog_layout);
 	}
+	$classes[] = $resoto_page_layout;
 
 	return $classes;
 }

@@ -26,7 +26,8 @@ function resoto_customize_register( $wp_customize ) {
 		) );
 	}
 
-	// $wp_customize->remove_section('title_tagline');
+	$wp_customize->remove_section('title_tagline');
+	$wp_customize->remove_section('header_image');
 }
 add_action( 'customize_register', 'resoto_customize_register' );
 

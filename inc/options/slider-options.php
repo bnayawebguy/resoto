@@ -2,7 +2,7 @@
 	/** Slider Options **/
 	function resoto_slider_options( $wp_customize ) {
 
-		$category_list = resoto_category_list();
+		$category_list = resoto_category_list('dropdown');
 
 		/** Slider Section **/
 		Kirki::add_section( 'resoto_slider_options', array(

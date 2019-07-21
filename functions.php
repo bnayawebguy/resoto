@@ -45,6 +45,7 @@ if ( ! function_exists( 'resoto_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'resoto' ),
+			'footer-menu' => esc_html__( 'Footer Menu', 'resoto' ),
 		) );
 
 		/*
@@ -105,11 +106,21 @@ add_action( 'after_setup_theme', 'resoto_content_width', 0 );
  */
 function resoto_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'resoto' ),
-		'id'            => 'sidebar-1',
+		'name'          => esc_html__( 'Right Sidebar', 'resoto' ),
+		'id'            => 'right-sidebar',
 		'description'   => esc_html__( 'Add widgets here.', 'resoto' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Hotel Search Rooms', 'resoto' ),
+		'id'            => 'hb-search-rooms',
+		'description'   => esc_html__( 'Add HB Search Room widget here.', 'resoto' ),
+		'before_widget' => '',
+		'after_widget'  => '',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
@@ -132,8 +143,11 @@ function resoto_scripts() {
     
     $playfair = _x( 'on', 'Playfair Display font: on or off', 'resoto' );
     $worksans = _x( 'on', 'Work Sans font: on or off', 'resoto' );
+    $montserrat = _x( 'on', 'Montserrat font: on or off', 'resoto' );
+    $poppins = _x( 'on', 'Poppins font: on or off', 'resoto' );
+
     
-    if ( 'off' !== $playfair || 'off' !== $worksans ) {
+    if ( 'off' !== $playfair || 'off' !== $worksans || 'off' !== $montserrat || 'off' !== $poppins ) {
 		$font_families = array();
 		 
 		if ( 'off' !== $playfair ) {
@@ -142,6 +156,14 @@ function resoto_scripts() {
 		 
 		if ( 'off' !== $worksans ) {
 			$font_families[] = 'Work Sans';
+		}
+
+		if ( 'off' !== $montserrat ) {
+			$font_families[] = 'Montserrat:400,500,600,700,800,900';
+		}
+
+		if ( 'off' !== $poppins ) {
+			$font_families[] = 'Poppins:400,500,600,700,800,900';
 		}
 		 
 		$query_args = array(
@@ -172,6 +194,18 @@ function resoto_scripts() {
 add_action( 'wp_enqueue_scripts', 'resoto_scripts' );
 
 /**
+ * Enqueue Backend scripts and styles
+ */
+function resoto_admin_scripts() {
+	/** Admin Styles **/
+	wp_enqueue_style( 'resoto-admin-styles', get_template_directory_uri() . '/assets/css/admin-styles.css', array(), '20151215' );
+
+	/** Admin Scripts **/
+	wp_enqueue_script( 'resoto-admin-script', get_template_directory_uri() . '/js/admin-script.js', '20151215', true );
+}
+add_action( 'admin_enqueue_scripts', 'resoto_admin_scripts', 10 );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
@@ -199,6 +233,15 @@ require get_template_directory() . '/inc/options/theme-options.php';
 
 /** Resoto Functions **/
 require get_template_directory() . '/inc/resoto-functions.php';
+
+/** Resoto Metaboxes **/
+require get_template_directory() . '/inc/metabox.php';
+
+/** Resoto Breadcrumb **/
+require get_template_directory() . '/inc/breadcrumbs.php';
+
+/** Resoto Breadcrumb **/
+require get_template_directory() . '/assets/css/dynamic-styles.php';
 
 /**
  * Load Jetpack compatibility file.

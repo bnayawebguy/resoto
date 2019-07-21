@@ -7,4 +7,6 @@
 	require get_template_directory() . '/inc/options/helper.php'; // Helper File	
 
 	require get_template_directory() . '/inc/options/header-options.php'; // Header Options
-	require get_template_directory() . '/inc/options/slider-options.php'; // Header Options
+	require get_template_directory() . '/inc/options/slider-options.php'; // Slider Options
+	require get_template_directory() . '/inc/options/footer-options.php'; // Footer Options
+	require get_template_directory() . '/inc/options/blog-options.php'; // Blog Options

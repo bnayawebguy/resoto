@@ -4,7 +4,6 @@
 
 		/** Header Panel **/
 		Kirki::add_panel( 'resoto_header_panel', array(
-		    // 'priority'    => 10,
 		    'title'       => esc_html__( 'Header', 'resoto' ),
 		    'description' => esc_html__( 'Configure Header', 'resoto' ),
 		) );
@@ -128,6 +127,74 @@
 					'default'     => '#0088CC',
 					'choices'     => [
 						'alpha' => true,
+					],
+				] );
+
+			/** Page Banner **/
+			Kirki::add_section( 'resoto_hb_search_room', array(
+			    'title'          => esc_html__( 'Hotel Search Room', 'resoto' ),
+			    'panel'          => 'resoto_header_panel',
+			) );
+
+				/** Enable/Disable search room **/
+				Kirki::add_field( 'resoto_show_hb_search_rooms', [
+					'type'        => 'switch',
+					'settings'    => 'resoto_show_hb_search_rooms',
+					'label'       => esc_html__( 'Show/Hide Search Rooms Form', 'resoto' ),
+					'section'     => 'resoto_hb_search_room',
+					'default'     => '1',
+					'choices'     => [
+						'on'  => esc_html__( 'Show', 'resoto' ),
+						'off' => esc_html__( 'Hide', 'resoto' ),
+					],
+				] );
+
+			/** Page Banner **/
+			Kirki::add_section( 'resoto_page_banner', array(
+			    'title'          => esc_html__( 'Page Banner', 'resoto' ),
+			    'panel'          => 'resoto_header_panel',
+			) );
+
+				/** Page Banner Color **/
+				Kirki::add_field( 'resoto_page_banner_bgcolor', [
+					'type'        => 'color',
+					'settings'    => 'resoto_page_banner_bgcolor',
+					'label'       => __( 'Background Color', 'resoto' ),
+					'description' => esc_html__( 'Set Banner Color for the Inner Pages.', 'resoto' ),
+					'section'     => 'resoto_page_banner',
+					'default'     => '#0088CC',
+				] );
+
+				/** Page Banner Image **/
+				Kirki::add_field( 'resoto_page_banner_bgimage', [
+					'type'        => 'image',
+					'settings'    => 'resoto_page_banner_bgimage',
+					'label'       => esc_html__( 'Banner Image', 'resoto' ),
+					'description' => esc_html__( 'Set Banner Images for the Inner Pages.', 'resoto' ),
+					'section'     => 'resoto_page_banner',
+					'default'     => '',
+				] );
+
+				/** Page Banner Text Color **/
+				Kirki::add_field( 'resoto_page_banner_textcolor', [
+					'type'        => 'color',
+					'settings'    => 'resoto_page_banner_textcolor',
+					'label'       => __( 'Text Color', 'resoto' ),
+					'description' => esc_html__( 'Set color for the banner text.', 'resoto' ),
+					'section'     => 'resoto_page_banner',
+					'default'     => '#0088CC',
+				] );
+
+				/** Enable/Disable Breadcrumb **/
+				Kirki::add_field( 'resoto_display_breadcrumb', [
+					'type'        => 'switch',
+					'settings'    => 'resoto_display_breadcrumb',
+					'label'       => esc_html__( 'Show/Hide Breadcrumb', 'resoto' ),
+					'section'     => 'resoto_page_banner',
+					'default'     => '1',
+					'choices'     => [
+						'on'  => esc_html__( 'Show', 'resoto' ),
+						'off' => esc_html__( 'Hide', 'resoto' ),
 					],
 				] );
 

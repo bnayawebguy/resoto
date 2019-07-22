@@ -14,6 +14,7 @@
  */
 defined( 'ABSPATH' ) || exit(); ?>
 <?php
+	$room_layout = get_theme_mod( 'resoto_rooms_page_layout', 'list' );
 	$post_features_ids = get_post_meta( get_the_id(), '_hb_room_extra' );
 	$post_features = array();
 	if( !empty( $post_features_ids && $post_features_ids[0] != '' ) ) {
@@ -27,7 +28,11 @@ defined( 'ABSPATH' ) || exit(); ?>
 	$excerpt_length = get_theme_mod( 'resoto_room_excerpt_length', 100 );
 	$view_more_txt = get_theme_mod( 'resoto_room_viewmore_text', 'View More' );
 	$show_desc_text = get_theme_mod( 'resoto_enable_room_desc_text', 1 );
+
+	global $hb_room;
+	$rating = $hb_room->average_rating();
 ?>
+
 <li id="room-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php
@@ -93,7 +98,9 @@ defined( 'ABSPATH' ) || exit(); ?>
 		/**
 		 * hotel_booking_loop_room_price hook
 		 */
-		do_action( 'hotel_booking_loop_room_rating' );
+		if( $rating ) {
+			do_action( 'hotel_booking_loop_room_rating' );
+		}
 
 		/** Price and Info Wrap Start **/
 		echo "</div>";

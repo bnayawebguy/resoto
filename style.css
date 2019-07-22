@@ -1518,17 +1518,12 @@ body.blog-layout1 article .entry-content {
 .tp-hotel-booking.list-layout {
     display: flex;
     flex-wrap: wrap;
-    flex-flow: column;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.tp-hotel-booking.list-layout .hb_room {
-	padding: 0;
-}
-
-.tp-hotel-booking.list-layout .entry-summary {
+.tp-hotel-booking .entry-summary {
     display: flex;
     flex-wrap: wrap;
     margin: 0;
@@ -1537,19 +1532,39 @@ body.blog-layout1 article .entry-content {
     background: #fbfbfb;
 }
 
+a.view-more-btn {
+    display: inline-block;
+    background: #ec6a2a;
+    color: #fff;
+    padding: 5px 20px;
+}
+
+.tp-hotel-booking .star-rating span:before, .tp-hotel-booking .star-rating:before {
+	color: #ec6a2a;
+}
+/** List Layout **/
+.tp-hotel-booking.list-layout {
+	flex-flow: column;
+}
+
+.tp-hotel-booking.list-layout .hb_room {
+	padding: 0;
+}
+
 .tp-hotel-booking.list-layout .media {
     width: 40%;
     max-height: 332px;
     overflow: hidden;
 }
 
-.tp-hotel-booking.list-layout .media a:before {
+.tp-hotel-booking .media a:before {
 	display: none;
 }
 
 .tp-hotel-booking.list-layout .price-infos {
     width: 60%;
     padding: 30px;
+    position: relative;
 }
 
 .tp-hotel-booking.list-layout .price-infos p {
@@ -1557,13 +1572,13 @@ body.blog-layout1 article .entry-content {
 	margin-bottom: 20px;
 }
 
-.tp-hotel-booking.list-layout .price-infos .title h4 {
+.tp-hotel-booking .price-infos .title h4 {
 	font-size: 22px;
 	margin: 0px;
 	margin-bottom: 15px;
 }
 
-.tp-hotel-booking.list-layout .price-infos .room-features {
+.tp-hotel-booking .price-infos .room-features {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -1581,18 +1596,18 @@ body.blog-layout1 article .entry-content {
     border: none;
 }
 
-.tp-hotel-booking.list-layout .price-infos .room-features li span.icon {
+.tp-hotel-booking .price-infos .room-features li span.icon {
     font-size: 35px;
     font-weight: 300;
     display: block;
 }
 
-.tp-hotel-booking.list-layout .price-infos .room-features li span.name {
+.tp-hotel-booking .price-infos .room-features li span.name {
     color: #000000;
     font-size: 13px;
 }
 
-.tp-hotel-booking.list-layout .price-readmore-btn {
+.tp-hotel-booking .price-readmore-btn {
     display: flex;
     flex-wrap: wrap;
     padding-top: 25px;
@@ -1601,12 +1616,12 @@ body.blog-layout1 article .entry-content {
     align-items: center;
 }
 
-.tp-hotel-booking.list-layout .summary:hover .price {
+.tp-hotel-booking .hb_room .summary:hover .price {
 	transform: none;
 	-webkit-transform: none;
 }
 
-.tp-hotel-booking.list-layout .price-readmore-btn .price {
+.tp-hotel-booking .price-readmore-btn .price {
 	position: relative;
 	text-align: left;
 	right: auto;
@@ -1614,26 +1629,82 @@ body.blog-layout1 article .entry-content {
     display: inline-flex;
 }
 
-.tp-hotel-booking.list-layout .price-readmore-btn .price span {
+.tp-hotel-booking .price-readmore-btn .price span {
 	color: #616161;
 }
 
-.tp-hotel-booking.list-layout .price-readmore-btn .price span.price_value {
+.tp-hotel-booking .price-readmore-btn .price span.price_value {
 	color: #ec6a2a;
 }
 
-.tp-hotel-booking.list-layout .price-readmore-btn .price span.price_value:after {
+.tp-hotel-booking .price-readmore-btn .price span.price_value:after {
     content: "/";
     color: #616161;
     padding: 0px 6px;
     font-weight: 500;
 }
 
-a.view-more-btn {
+.tp-hotel-booking.list-layout .price-infos .rating {
+    top: 0;
+    left: -100px;
+    width: 100px;
+    padding-right: 12px;
+    height: 40px;
+    padding-top: 10px;
+    border-bottom-left-radius: 10px;
+    background: #fbfbfb;
+}
+
+/** Room (Grid Layout) **/
+.tp-hotel-booking.grid-layout {
+    margin: 0;
+    padding: 0;
+    flex-flow: row;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tp-hotel-booking.grid-layout > li.hb_room {
+	width: 32%;
+	padding: 0;
+}
+
+.tp-hotel-booking.grid-layout .media {
+	width: 100%;
+}
+
+.tp-hotel-booking.grid-layout .price-infos {
+	padding: 20px;
+	position: relative;
+}
+
+.tp-hotel-booking.grid-layout .price-infos .room-features {
+	margin-bottom: 12px;
+}
+
+.tp-hotel-booking.grid-layout .room-features li {
+    width: 50%;
+    display: inline-flex;
+    align-items: center;
+    padding: 0px 0px 15px 0px;
+}
+
+.tp-hotel-booking.grid-layout .price-infos .room-features li span.icon {
+    font-size: 20px;
     display: inline-block;
-    background: #ec6a2a;
-    color: #fff;
-    padding: 5px 20px;
+    margin-right: 10px;
+}
+
+.tp-hotel-booking.grid-layout .rating {
+    background: #fbfbfb;
+    width: 120px;
+    height: 35px;
+    left: 0px;
+    padding-top: 14px;
+    padding-right: 23px;
+    top: -43px;
+    border-top-right-radius: 10px;
 }
 
 /** Footer Styles **/

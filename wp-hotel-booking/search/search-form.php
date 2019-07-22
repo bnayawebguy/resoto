@@ -42,7 +42,8 @@ $uniqid         = uniqid();
 				<?php hb_render_label_shortcode( $atts, 'show_label', __( 'Arrival Date', 'wp-hotel-booking' ), 'true' ); ?>
                 <div class="hb-form-field-input hb_input_field">
                     <input type="text" name="check_in_date" id="check_in_date_<?php echo esc_attr( $uniqid ); ?>"
-                           class="hb_input_date_check" value="<?php echo esc_attr( $check_in_date ); ?>" />
+                           class="hb_input_date_check" value="<?php echo esc_attr( $check_in_date ); ?>"
+                           placeholder="<?php _e( 'Arrival Date', 'wp-hotel-booking' ); ?>"/>
                 </div>
             </li>
 
@@ -50,7 +51,8 @@ $uniqid         = uniqid();
 				<?php hb_render_label_shortcode( $atts, 'show_label', __( 'Departure Date', 'wp-hotel-booking' ), 'true' ); ?>
                 <div class="hb-form-field-input hb_input_field">
                     <input type="text" name="check_out_date" id="check_out_date_<?php echo esc_attr( $uniqid ) ?>"
-                           class="hb_input_date_check" value="<?php echo esc_attr( $check_out_date ); ?>" />
+                           class="hb_input_date_check" value="<?php echo esc_attr( $check_out_date ); ?>"
+                           placeholder="<?php _e( 'Departure Date', 'wp-hotel-booking' ); ?>"/>
                 </div>
             </li>
 

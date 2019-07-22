@@ -38,7 +38,7 @@ if ( ! function_exists( 'resoto_posted_by' ) ) :
 	function resoto_posted_by() {
 		?>
 		<span class="posted-by">
-			<?php echo wp_kses_post( get_avatar( get_the_author_meta( 'user_email' ), 35 ) ); ?>
+			<?php echo wp_kses_post( get_avatar( get_the_author_meta( 'user_email' ), 30 ) ); ?>
 			<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) ?>">
 				<?php echo esc_html( get_the_author_meta( 'display_name' ) ); ?>	
 			</a>

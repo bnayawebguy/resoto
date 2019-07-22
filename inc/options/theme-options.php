@@ -10,3 +10,4 @@
 	require get_template_directory() . '/inc/options/slider-options.php'; // Slider Options
 	require get_template_directory() . '/inc/options/footer-options.php'; // Footer Options
 	require get_template_directory() . '/inc/options/blog-options.php'; // Blog Options
+	require get_template_directory() . '/inc/options/room-options.php'; // Room Options

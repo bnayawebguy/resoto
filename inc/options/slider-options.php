@@ -26,11 +26,25 @@
 				Kirki::add_field( 'resoto_slider_category', [
 					'type'        => 'select',
 					'settings'    => 'resoto_slider_category',
-					'label'       => esc_html__( 'Category Slider', 'resoto' ),
+					'label'       => esc_html__( 'Slider Category', 'resoto' ),
 					'section'     => 'resoto_slider_options',
 					'default'     => 0,
 					'multiple'    => 1,
 					'choices'     => $category_list
+				] );
+
+				/** Slider Layout **/
+				Kirki::add_field( 'resoto_slider_layout', [
+					'type'        => 'radio-image',
+					'settings'    => 'resoto_slider_layout',
+					'label'       => esc_html__( 'Slider Layout', 'resoto' ),
+					'section'     => 'resoto_slider_options',
+					'default'     => 'layout1',
+					'choices'     => [
+						'layout1'   => get_template_directory_uri() . '/assets/images/layout1.png',
+						'layout2' => get_template_directory_uri() . '/assets/images/layout2.png',
+						'layout3'  => get_template_directory_uri() . '/assets/images/layout3.png',
+					],
 				] );
 
 	}

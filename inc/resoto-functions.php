@@ -6,12 +6,13 @@
 		}
 
 		$slider_category = get_theme_mod( 'resoto_slider_category', 0 );
+		$slider_layout = get_theme_mod( 'resoto_slider_layout', 'layout1' );
 
 		$slider_query = new WP_Query( array( 'category_name' => $slider_category ) );
 
 		if( $slider_query->have_posts() ) {
 			?>
-			<div class="resoto-slider owl-carousel">
+			<div class="resoto-slider owl-carousel <?php echo esc_attr( $slider_layout ); ?>">
 				<?php
 					while( $slider_query->have_posts() ) {
 						$slider_query->the_post();
@@ -46,14 +47,16 @@
 
 	/** Resoto Hotel Search Rooms **/
 	function resoto_hb_search_rooms_cb() {
+		if( !is_front_page() ) {
+			return;
+		}
+
 		$show_search_rooms_form = get_theme_mod( 'resoto_show_hb_search_rooms', 1 );
 
 		if( $show_search_rooms_form && is_active_sidebar( 'hb-search-rooms' ) ) {
 			?>
 			<div class="resoto-hb-search-room">
-				<div class="rcontainer">
-					<?php dynamic_sidebar( 'hb-search-rooms' ); ?>	
-				</div>
+				<?php dynamic_sidebar( 'hb-search-rooms' ); ?>
 			</div>
 			<?php
 		}

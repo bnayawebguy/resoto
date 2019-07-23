@@ -35,10 +35,12 @@ if ( ! function_exists( 'resoto_posted_by' ) ) :
 	/**
 	 * Prints HTML with meta information for the current author.
 	 */
-	function resoto_posted_by() {
+	function resoto_posted_by( $author_avatar ) {
 		?>
 		<span class="posted-by">
-			<?php echo wp_kses_post( get_avatar( get_the_author_meta( 'user_email' ), 30 ) ); ?>
+			<?php if( $author_avatar ) : ?>
+				<?php echo wp_kses_post( get_avatar( get_the_author_meta( 'user_email' ), 30 ) ); ?>
+			<?php endif; ?>
 			<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) ?>">
 				<?php echo esc_html( get_the_author_meta( 'display_name' ) ); ?>	
 			</a>
@@ -162,6 +164,19 @@ if ( ! function_exists( 'resoto_post_thumbnail' ) ) :
 	}
 endif;
 
+/** Comment Icon Box **/
+function resoto_comment_box() {
+	if( get_comments_number() ) :
+	?>
+		<span class="post-comments">
+			<i class="lni-bubble"></i>
+			<?php comments_number( 'no responses', 'one response', '% responses' ); ?>
+		</span>
+	<?php
+	endif;
+}
+
+/** Get Page Title According to the page type **/
 function resoto_get_page_title() {
 	$post = get_queried_object();
 	if( is_single() || is_page() || is_home() ) {

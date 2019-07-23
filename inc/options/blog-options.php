@@ -24,7 +24,7 @@
 				],
 			] );
 
-			/** Blog Layout **/
+			/** Blog Sidebar Layout **/
 			Kirki::add_field( 'resoto_blog_sidebar_layout', [
 				'type'        => 'radio-image',
 				'settings'    => 'resoto_blog_sidebar_layout',
@@ -45,6 +45,19 @@
 				'section'     => 'resoto_blog_options',
 				'default'     => array(),
 				'choices'     => $category_list_chk,
+			] );
+
+			/** Excerpt Length **/
+			Kirki::add_field( 'resoto_blog_excerpt_length', [
+				'type'        => 'slider',
+				'settings'    => 'resoto_blog_excerpt_length',
+				'label'       => esc_html__( 'Excerpt Length (In Chars)', 'resoto' ),
+				'section'     => 'resoto_blog_options',
+				'choices'     => [
+					'min'  => 0,
+					'max'  => 500,
+					'step' => 1,
+				],
 			] );
 
 			/** ReadMore Text **/

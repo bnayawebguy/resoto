@@ -7,12 +7,26 @@
 		    'title'          => esc_html__( 'Footer', 'resoto' ),
 		) );
 
-			/** Social Icons Heading Text **/
-			Kirki::add_field( 'resoto_social_heading', [
-				'type'     => 'text',
-				'settings' => 'resoto_social_heading',
-				'label'    => esc_html__( 'Social Icons Heading', 'resoto' ),
-				'section'  => 'resoto_footer_options',
+			/** Footer Layout **/
+			Kirki::add_field( 'resoto_footer_layout', [
+				'type'        => 'radio-image',
+				'settings'    => 'resoto_footer_layout',
+				'label'       => esc_html__( 'Footer Layout', 'resoto' ),
+				'section'     => 'resoto_footer_options',
+				'default'     => 'layout1',
+				'choices'     => [
+					'layout1'   => get_template_directory_uri() . '/assets/images/layout1.png',
+					'layout2' => get_template_directory_uri() . '/assets/images/layout2.png',
+				],
+			] );
+
+			/** Footer Logo **/
+			Kirki::add_field( 'resoto_footer_logo', [
+				'type'        => 'image',
+				'settings'    => 'resoto_footer_logo',
+				'label'       => esc_html__( 'Footer Logo', 'resoto' ),
+				'section'     => 'resoto_footer_options',
+				'default'     => '',
 			] );
 
 			/** Facebook Link **/
@@ -24,14 +38,6 @@
 				'default'  => '',
 			] );
 
-			/** Facebook Text **/
-			Kirki::add_field( 'resoto_footer_facebook_text', [
-				'type'     => 'text',
-				'settings' => 'resoto_footer_facebook_text',
-				'label'    => esc_html__( 'Facebook Text', 'resoto' ),
-				'section'  => 'resoto_footer_options',
-			] );
-
 			/** Twitter Link **/
 			Kirki::add_field( 'resoto_footer_twitter', [
 				'type'     => 'link',
@@ -39,14 +45,6 @@
 				'label'    => __( 'Twitter Link', 'resoto' ),
 				'section'  => 'resoto_footer_options',
 				'default'  => '',
-			] );
-
-			/** Twitter Text **/
-			Kirki::add_field( 'resoto_footer_twitter_text', [
-				'type'     => 'text',
-				'settings' => 'resoto_footer_twitter_text',
-				'label'    => esc_html__( 'Twitter Text', 'resoto' ),
-				'section'  => 'resoto_footer_options',
 			] );
 
 			/** Instagram Link **/
@@ -58,14 +56,6 @@
 				'default'  => '',
 			] );
 
-			/** Twitter Text **/
-			Kirki::add_field( 'resoto_footer_instagram_text', [
-				'type'     => 'text',
-				'settings' => 'resoto_footer_instagram_text',
-				'label'    => esc_html__( 'Instagram Text', 'resoto' ),
-				'section'  => 'resoto_footer_options',
-			] );
-
 			/** Youtube Link **/
 			Kirki::add_field( 'resoto_footer_youtube', [
 				'type'     => 'link',
@@ -75,14 +65,7 @@
 				'default'  => '',
 			] );
 
-			/** Youtube Text **/
-			Kirki::add_field( 'resoto_footer_youtube_text', [
-				'type'     => 'text',
-				'settings' => 'resoto_footer_youtube_text',
-				'label'    => esc_html__( 'Youtube Text', 'resoto' ),
-				'section'  => 'resoto_footer_options',
-			] );
-
+			/** Copyright Text **/
 			Kirki::add_field( 'resoto_copyright_text', [
 				'type'     => 'textarea',
 				'settings' => 'resoto_copyright_text',

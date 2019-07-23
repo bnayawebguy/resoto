@@ -4,7 +4,7 @@
 
 		$category_list = resoto_category_list('dropdown');
 
-		/** Slider Section **/
+		/** Hotel Room Section **/
 		Kirki::add_section( 'resoto_room_options', array(
 		    'title'          => esc_html__( 'Hotel Rooms', 'resoto' ),
 		) );

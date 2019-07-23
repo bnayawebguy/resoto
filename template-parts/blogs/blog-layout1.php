@@ -29,9 +29,10 @@
 		</h2>
 
 		<div class="post-metas">
-			<?php resoto_posted_by(); ?>
+			<?php resoto_posted_by( $author_avatar = true ); ?>
 			<?php resoto_posted_on(); ?>
 			<?php resoto_posted_category( get_the_id() ); ?>
+			<?php resoto_comment_box(); ?>
 		</div>
 
 	</div><!-- .entry-header -->

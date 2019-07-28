@@ -42,4 +42,5 @@
 	<?php do_action( 'resoto_page_banner' ); ?>
 
 	<div id="content" class="site-content">
-		<div class="rcontainer">
+		<?php do_action( 'resoto_page_wrapper_start' ); ?>
+		<!-- <div class="rcontainer"> -->

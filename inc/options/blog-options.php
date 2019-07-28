@@ -19,8 +19,7 @@
 				'default'     => 'layout1',
 				'choices'     => [
 					'layout1'   => get_template_directory_uri() . '/assets/images/layout1.png',
-					'layout2' => get_template_directory_uri() . '/assets/images/layout2.png',
-					'layout3'  => get_template_directory_uri() . '/assets/images/layout3.png',
+					'layout2' => get_template_directory_uri() . '/assets/images/layout2.png'
 				],
 			] );
 

@@ -10,26 +10,25 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+
+	<?php if( has_post_thumbnail() ) : ?>
 		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+			$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
+			$image_alt = get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true );
+		?>
+		<div class="post-image">
+			<a href="<?php the_permalink(); ?>">
+				<img src="<?php echo esc_url( $image[0] ); ?>" alt="<?php esc_attr_e( $image_alt ); ?>">
+			</a>
+		</div>
+	<?php endif; ?>
 
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				resoto_posted_on();
-				resoto_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-	<?php resoto_post_thumbnail(); ?>
+	<div class="post-metas">
+		<?php resoto_posted_by( $author_avatar = true ); ?>
+		<?php resoto_posted_on(); ?>
+		<?php resoto_posted_category( get_the_id() ); ?>
+		<?php resoto_comment_box(); ?>
+	</div>
 
 	<div class="entry-content">
 		<?php

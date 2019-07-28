@@ -26,6 +26,8 @@ function resoto_body_classes( $classes ) {
 
 		$blog_layout = get_theme_mod( 'resoto_blog_layout', 'layout1' );
 		$classes[] = 'blog-' . esc_attr($blog_layout);
+	} elseif( is_search() || is_single() ) {
+		$resoto_page_layout = 'right-sidebar';
 	}
 	$classes[] = $resoto_page_layout;
 

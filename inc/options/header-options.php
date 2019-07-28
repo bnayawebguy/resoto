@@ -113,7 +113,6 @@
 					'choices'     => [
 						'layout1'   => get_template_directory_uri() . '/assets/images/layout1.png',
 						'layout2' => get_template_directory_uri() . '/assets/images/layout2.png',
-						'layout3'  => get_template_directory_uri() . '/assets/images/layout3.png',
 					],
 				] );
 
@@ -127,6 +126,32 @@
 					'default'     => '#0088CC',
 					'choices'     => [
 						'alpha' => true,
+					],
+				] );
+
+				/** Show Search Icon **/
+				Kirki::add_field( 'resoto_show_search', [
+					'type'        => 'switch',
+					'settings'    => 'resoto_show_search',
+					'label'       => esc_html__( 'Display Search in Header', 'resoto-companion' ),
+					'section'     => 'section_id',
+					'default'     => '1',
+					'choices'     => [
+						'on'  => esc_html__( 'Show', 'resoto-companion' ),
+						'off' => esc_html__( 'Hide', 'resoto-companion' ),
+					],
+				] );
+
+				/** Show Hotel Cart **/
+				Kirki::add_field( 'resoto_show_hotelcart', [
+					'type'        => 'switch',
+					'settings'    => 'resoto_show_hotelcart',
+					'label'       => esc_html__( 'Display Hotel Cart in Header', 'resoto-companion' ),
+					'section'     => 'section_id',
+					'default'     => '1',
+					'choices'     => [
+						'on'  => esc_html__( 'Enable', 'resoto-companion' ),
+						'off' => esc_html__( 'Disable', 'resoto-companion' ),
 					],
 				] );
 

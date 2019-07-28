@@ -8,6 +8,8 @@
 	$twitter = get_theme_mod( 'resoto_twitter', '' );
 	$instagram = get_theme_mod( 'resoto_instagram', '' );
 	$youtube = get_theme_mod( 'resoto_youtube', '' );
+	$show_search = get_theme_mod( 'resoto_show_search', 1 );
+	$show_hotelcart = get_theme_mod( 'resoto_show_hotelcart', 1 );
 ?>
 <header id="masthead" class="site-header <?php echo esc_attr( $header_layout ); ?>">
 	<?php if( $enable_top_header ) : ?>
@@ -78,6 +80,25 @@
 					) );
 					?>
 			</nav><!-- #site-navigation -->
+
+			<div class="resoto-search-hotelcart">
+				<?php if( $show_search ) : ?>
+					<div class="resoto-search">
+						<span class="lni-search"></span>
+						<div class="resoto-search-form">
+							<?php get_search_form(); ?>
+							<span class="lni-cross-circle"></span>
+						</div>
+					</div>
+				<?php endif; ?>
+
+				<?php if( $show_hotelcart ) : ?>
+					<div class="resoto-hotelcart">
+						<span class="lni-cart"><?php resoto_get_cart_items_count(); ?></span>
+						<?php do_shortcode( '[hotel_booking_mini_cart]' ); ?>
+					</div>
+				<?php endif; ?>
+			</div>
 		</div> <!-- .rcontainer -->
 	</div>
 </header><!-- #masthead -->

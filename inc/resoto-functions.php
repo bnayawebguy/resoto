@@ -114,4 +114,55 @@
         
         return $query;
     }
+
     add_filter('pre_get_posts', 'resoto_exclude_cat_from_blog');
+
+    /** Include Container Wrapper only if page is not based on elementor **/
+    function resoto_page_wrapper_start_cb() {
+    	wp_reset_postdata();
+    	if( is_page() && class_exists('\Elementor\Plugin') ) {
+    		$built_on_elementor = \Elementor\Plugin::$instance->db->is_built_with_elementor(get_the_id());
+    		
+    		if( !$built_on_elementor ) {
+    			?>
+    			<div class="rcontainer">
+    			<?php
+    		}
+
+    	} else {
+    		?>
+    		<div class="rcontainer">
+    		<?php
+		}
+    }
+
+    add_action( 'resoto_page_wrapper_start', 'resoto_page_wrapper_start_cb' );
+
+    /** Include Container Wrapper only if page is not based on elementor **/
+    function resoto_page_wrapper_end_cb() {
+    	wp_reset_postdata();
+    	if( is_page() && class_exists('\Elementor\Plugin') ) {
+    		$built_on_elementor = \Elementor\Plugin::$instance->db->is_built_with_elementor(get_the_id());
+    		
+    		if( !$built_on_elementor ) {
+    			?>
+    				</div>
+    			<?php
+    		}
+    	} else {
+    		?>
+    			</div>
+    		<?php    	
+    	}
+    }
+
+    add_action( 'resoto_page_wrapper_end', 'resoto_page_wrapper_end_cb' );
+
+    /** Get Cart Items Count **/
+    function resoto_get_cart_items_count() {
+		$cart  = WP_Hotel_Booking::instance()->cart;
+		$rooms = $cart->get_rooms();
+		?>
+		<i class="resoto-cart-qty"><?php echo esc_html( count($rooms) ); ?></i>
+		<?php
+	}

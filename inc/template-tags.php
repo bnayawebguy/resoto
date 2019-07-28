@@ -183,6 +183,11 @@ function resoto_get_page_title() {
 		return $post->post_title;
 	} elseif( is_archive() ) {
 		return get_the_archive_title();
+	} elseif( is_search() ) {
+		/* translators: %s: search query. */
+		printf( esc_html__( 'Search Results for: %s', 'resoto' ), '<span>' . get_search_query() . '</span>' );
+	} elseif( is_404() ) {
+		esc_html_e( 'Page Not Found', 'resoto' );
 	}
 
 }

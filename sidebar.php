@@ -14,6 +14,8 @@ if( is_page( $post ) ) {
 } elseif( is_archive() || is_home() ) {
 	$sidebarr = get_theme_mod( 'resoto_blog_sidebar_layout', '' );
 	$sidebar = ( $sidebarr == 'no-sidebar' ) ? '' : $sidebarr;
+} elseif( is_search() || is_single() ) {
+	$sidebar = 'right-sidebar';
 }
 
 if ( $sidebar && ! is_active_sidebar( $sidebar ) ) {

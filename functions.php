@@ -176,6 +176,9 @@ function resoto_scripts() {
 	/** Line Icons **/
 	wp_enqueue_style( 'lineicons', get_template_directory_uri() . '/vendors/line-icons/LineIcons.min.css', array(), '20151215' );
 
+	/** Animate CSS **/
+	wp_enqueue_style( 'animate', get_template_directory_uri() . '/vendors/wow/animate.css', array(), '20151215' );
+
 	/** Owl Carousel **/
 	wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/vendors/owl-carousel/owl.carousel.min.css', array(), '20151215' );
 
@@ -219,11 +222,14 @@ function resoto_scripts() {
 
 	wp_enqueue_script( 'resoto-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
+	/** Wow Script **/
+	wp_enqueue_script( 'wow', get_template_directory_uri() . '/vendors/wow/wow.min.js', array( 'jquery' ), '20151215', true );
+
 	/** Owl Carousel **/
 	wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/vendors/owl-carousel/owl.carousel.min.js', array( 'jquery' ), '20151215', true );
 
 	/** Custom Script **/
-	wp_enqueue_script( 'resoto-custom-script', get_template_directory_uri() . '/js/custom-script.js', '20151215', true );
+	wp_enqueue_script( 'resoto-custom-script', get_template_directory_uri() . '/js/custom-script.js', array( 'jquery', 'wow', 'owl-carousel' ), '20151215', true );
 
 	wp_enqueue_script( 'resoto-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 

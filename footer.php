@@ -10,7 +10,8 @@
  */
 
 ?>
-		</div><!-- .rcontainer -->
+		<?php do_action( 'resoto_page_wrapper_end' ); ?>
+		<!--</div> .rcontainer -->
 	</div><!-- #content -->
 
 	<?php

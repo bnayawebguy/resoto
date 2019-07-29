@@ -82,7 +82,7 @@
 						</div>
 					<?php endif; ?>
 
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'resoto' ); ?></button>
+					<a id="simple-menu" href="#resoto-sidemenu"><i class="lni-menu"></i></a>
 					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'menu-1',

@@ -29,7 +29,9 @@ get_header();
 
 			endwhile;
 
-			the_posts_navigation();
+			?>
+			<div class='pagination-wrap'><?php the_posts_pagination(); ?></div>
+			<?php
 
 		else :
 

@@ -1,5 +1,15 @@
 jQuery(document).ready(function($){
 
+	/** Sidemenu **/
+	$('#simple-menu').sidr({
+		name: 'resoto-smenu',
+		source: '#resoto-sidemenu'
+	});
+
+	$('body').on('click', ':not(.sidr)', function() {
+		$.sidr('close', 'resoto-smenu');
+	});
+
 	/** Wow & Animate js **/
 	new WOW().init();
 

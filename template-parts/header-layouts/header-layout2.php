@@ -70,15 +70,17 @@
 					<p class="site-description"><?php echo $resoto_description; /* WPCS: xss ok. */ ?></p>
 				<?php endif; ?>
 			</div><!-- .site-branding -->
+
+
 			<nav id="site-navigation" class="main-navigation">
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'resoto' ); ?></button>
-					<?php
+				<a id="simple-menu" href="#resoto-sidemenu"><i class="lni-menu"></i></a>
+				<?php
 					wp_nav_menu( array(
 						'theme_location' => 'menu-1',
 						'menu_id'        => 'primary-menu',
 						'container'		 => false
 					) );
-					?>
+				?>
 			</nav><!-- #site-navigation -->
 
 			<div class="resoto-search-hotelcart">

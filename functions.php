@@ -126,6 +126,16 @@ function resoto_widgets_init() {
 	) );
 
 	register_sidebar( array(
+		'name'          => esc_html__( 'Hotel Room Sidebar', 'resoto' ),
+		'id'            => 'hb-room-sidebar',
+		'description'   => esc_html__( 'Add widgets for single rooms page.', 'resoto' ),
+		'before_widget' => '<div class="widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
 		'name'          => esc_html__( 'Footer 1', 'resoto' ),
 		'id'            => 'footer-1',
 		'description'   => esc_html__( 'Add widgets for the footer 1 area.', 'resoto' ),
@@ -167,71 +177,78 @@ function resoto_widgets_init() {
 }
 add_action( 'widgets_init', 'resoto_widgets_init' );
 
+/** Enqueue Google Fonts **/
+function resoto_enqueue_google_fonts() {
+	$google_fonts = array(
+		'Playfair Display' => array(
+			'weights' => array('regular', 'italic', '700', '900'),
+		),
+		'Work Sans' => array(
+			'weights' => array('regular', 'italic', '700', '900'),
+		),
+		'Montserrat' => array(
+			'weights' => array('400', '500', '600', '700', '800', '900'),
+		),
+		'Poppins' => array(
+			'weights' => array('400', '500', '600', '700', '800', '900'),
+		),
+	);
+
+	foreach( $google_fonts as $family => $font ) {
+		$font_query[] = $family . ':' . implode(',', $font['weights']);
+	}
+
+	$query_args = array(
+		'family' => urlencode(implode('|', $font_query)),
+	 	'subset' => urlencode('latin,latin-ext'),
+	);
+
+	$fontsURL = add_query_arg($query_args, 'https://fonts.googleapis.com/css');   
+
+	/** Google Fonts **/
+	wp_enqueue_style( 'resoto-googlefonts', $fontsURL, array(), null );
+}
+
 /**
  * Enqueue scripts and styles.
  */
 function resoto_scripts() {
+	resoto_enqueue_google_fonts();
+
+	$theme = wp_get_theme();
+	$ver = $theme->get('version');
+
+	/** Theme Styles **/
 	wp_enqueue_style( 'resoto-style', get_stylesheet_uri() );
 
+	/** Responsive Styles **/
+	wp_enqueue_style( 'resoto-responsive-style', get_template_directory_uri() . '/assets/css/responsive-styles.css' );
+
+	/** Sidemenu **/
+	wp_enqueue_style( 'sidr', get_template_directory_uri() . '/vendors/sidr/jquery.sidr.bare.css', array(), $ver );
+
 	/** Line Icons **/
-	wp_enqueue_style( 'lineicons', get_template_directory_uri() . '/vendors/line-icons/LineIcons.min.css', array(), '20151215' );
+	wp_enqueue_style( 'lineicons', get_template_directory_uri() . '/vendors/line-icons/LineIcons.min.css', array(), $ver );
 
 	/** Animate CSS **/
-	wp_enqueue_style( 'animate', get_template_directory_uri() . '/vendors/wow/animate.css', array(), '20151215' );
+	wp_enqueue_style( 'animate', get_template_directory_uri() . '/vendors/wow/animate.css', array(), $ver );
 
 	/** Owl Carousel **/
-	wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/vendors/owl-carousel/owl.carousel.min.css', array(), '20151215' );
-
-	$fonts_url = '';
-    
-    $playfair = _x( 'on', 'Playfair Display font: on or off', 'resoto' );
-    $worksans = _x( 'on', 'Work Sans font: on or off', 'resoto' );
-    $montserrat = _x( 'on', 'Montserrat font: on or off', 'resoto' );
-    $poppins = _x( 'on', 'Poppins font: on or off', 'resoto' );
-
-    
-    if ( 'off' !== $playfair || 'off' !== $worksans || 'off' !== $montserrat || 'off' !== $poppins ) {
-		$font_families = array();
-		 
-		if ( 'off' !== $playfair ) {
-			$font_families[] = 'Playfair Display';
-		}
-		 
-		if ( 'off' !== $worksans ) {
-			$font_families[] = 'Work Sans';
-		}
-
-		if ( 'off' !== $montserrat ) {
-			$font_families[] = 'Montserrat:400,500,600,700,800,900';
-		}
-
-		if ( 'off' !== $poppins ) {
-			$font_families[] = 'Poppins:400,500,600,700,800,900';
-		}
-		 
-		$query_args = array(
-			'family' => urlencode( implode( '|', $font_families ) ),
-			'subset' => urlencode( 'latin,latin-ext' ),
-		);
-		 
-		$google_fonts = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
-	}
-
-	/** Google Fonts **/
-	wp_enqueue_style( 'resoto-googlefonts', $google_fonts );
-
-	wp_enqueue_script( 'resoto-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/vendors/owl-carousel/owl.carousel.min.css', array(), $ver );
 
 	/** Wow Script **/
-	wp_enqueue_script( 'wow', get_template_directory_uri() . '/vendors/wow/wow.min.js', array( 'jquery' ), '20151215', true );
+	wp_enqueue_script( 'wow', get_template_directory_uri() . '/vendors/wow/wow.min.js', array( 'jquery' ), $ver, true );
 
 	/** Owl Carousel **/
-	wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/vendors/owl-carousel/owl.carousel.min.js', array( 'jquery' ), '20151215', true );
+	wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/vendors/owl-carousel/owl.carousel.min.js', array( 'jquery' ), $ver, true );
+
+	/** Sidemenu **/
+	wp_enqueue_script( 'sidr', get_template_directory_uri() . '/vendors/sidr/jquery.sidr.min.js', array( 'jquery' ), $ver, true );
 
 	/** Custom Script **/
-	wp_enqueue_script( 'resoto-custom-script', get_template_directory_uri() . '/js/custom-script.js', array( 'jquery', 'wow', 'owl-carousel' ), '20151215', true );
+	wp_enqueue_script( 'resoto-custom-script', get_template_directory_uri() . '/js/custom-script.js', array( 'jquery', 'wow', 'owl-carousel' ), $ver, true );
 
-	wp_enqueue_script( 'resoto-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'resoto-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), $ver, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

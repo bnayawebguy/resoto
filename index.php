@@ -37,8 +37,9 @@ $blog_layout = get_theme_mod( 'resoto_blog_layout', 'layout1' );
 
 			endwhile;
 
-			the_posts_navigation();
-
+			?>
+			<div class='pagination-wrap'><?php the_posts_pagination(); ?></div>
+			<?php
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );

@@ -1,4 +1,21 @@
 <?php
+	/** Resoto Responsive Sidemenu **/
+	function resoto_responsive_sidemenu_cb() {
+		?>
+		<div id="resoto-sidemenu" style="display: none;">
+			<?php
+				wp_nav_menu( array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'primary-menu',
+					'container'		 => false
+				) );
+			?>
+		</div>
+		<?php
+	}
+
+	add_action( 'resoto_responsive_sidemenu', 'resoto_responsive_sidemenu_cb' );
+
 	/** Resoto Slider **/
 	function resoto_slider_cb() {
 		if( !is_front_page() ) {
@@ -162,7 +179,8 @@
     function resoto_get_cart_items_count() {
 		$cart  = WP_Hotel_Booking::instance()->cart;
 		$rooms = $cart->get_rooms();
+		$cart_items = ($rooms) ? $rooms : 0;
 		?>
-		<i class="resoto-cart-qty"><?php echo esc_html( count($rooms) ); ?></i>
+		<i class="resoto-cart-qty"><?php echo esc_html($cart_items); ?></i>
 		<?php
 	}

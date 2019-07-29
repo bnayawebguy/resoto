@@ -1245,6 +1245,12 @@ header .site-branding .site-description {
     margin-top: 0px;
 }
 
+/** Responsive Menu Toggle **/
+#simple-menu {
+	font-size: 22px;
+	display: none;
+}
+
 /** Header Layout 1**/
 header.layout1 .site-branding {
     text-align: center;
@@ -1418,18 +1424,18 @@ header.layout2 .resoto-hotelcart > span i {
     position: relative;
     font-weight: 800;
     color: #484848;
+    line-height: 50px;
 }
 
 .resoto-slider .caption-text .slide-title span {
     font-size: 18px;
     display: block;
-    margin-bottom: 20px;
     font-weight: 500;
 }
 
 .resoto-slider .caption-text .text {
     width: 500px;
-    margin-top: 35px;
+    margin-top: 15px;
 }
 
 .slide-btn {
@@ -1622,6 +1628,7 @@ header.layout2 .resoto-hotelcart > span i {
 .resoto-banner h2.page-title {
     margin: 0;
     font-size: 40px;
+    line-height: 50px;
 }
 
 .resoto-banner ul {
@@ -1639,6 +1646,12 @@ header.layout2 .resoto-hotelcart > span i {
     text-decoration: none;
 }
 
+.resoto-banner ul a:hover,
+.resoto-banner ul a:focus,
+.resoto-banner ul .trail-end {
+	color: #ec6a2a;
+}
+
 .resoto-banner ul a:after {
     content: "\ea46";
     font-family: lineicons;
@@ -1649,7 +1662,7 @@ header.layout2 .resoto-hotelcart > span i {
 
 /** Content **/
 #content {
-    padding: 40px;
+    padding: 40px 0px;
 }
 
 #content .rcontainer {
@@ -1812,6 +1825,27 @@ body.blog-layout2 .blog-post-contents .post-title-metas .post-metas span:last-ch
 
 body.blog-layout2 article a.readmore-btn {
 	margin-left: 0px;
+}
+
+/** Pagination Styles **/
+.pagination-wrap {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.pagination-wrap a,
+.pagination-wrap span {
+    background: #ec6a2a;
+    color: #fff;
+    padding: 5px 15px;
+    display: inline-block;
+    margin-right: 10px;
+    transition: all 0.5s ease;
+}
+
+.pagination-wrap span,
+.pagination-wrap a:hover {
+    background: #000000;
 }
 
 /** Hotel Search Page **/
@@ -2312,14 +2346,138 @@ a.view-more-btn {
     border-top-right-radius: 10px;
 }
 
+/** Room Single Page **/
+.resoto-room-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.resoto-room-wrap.has-sidebar .hb_single_room{
+	width: 70%;
+}
+
+.resoto-room-wrap.has-sidebar .sroom-sidebar {
+	width: 27%
+}
+
+.sroom-sidebar .hotel-booking-search {
+	padding: 0px;
+}
+
+.sroom-sidebar .hotel-booking-search .hb-form-table label{
+	display: block;	
+}
+
+.sroom-sidebar .hotel-booking-search input[type="text"],
+.sroom-sidebar .hotel-booking-search select,
+.sroom-sidebar .hotel-booking-search .hb_input_field,
+.sroom-sidebar .hotel-booking-search button {
+	min-width: auto;
+	width: 100%;
+	border-radius: 0px;
+}
+
+.sroom-sidebar .hotel-booking-search button {
+	border-color: #ec6a2a;
+	background-color: #ec6a2a;
+}
+
+.sroom-sidebar .hotel-booking-search button:hover,
+.sroom-sidebar .hotel-booking-search button:focus {
+	background-color: #000000;
+	border-color: #000000;
+}
+
+.resoto-room-wrap ul.room-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.resoto-room-wrap ul.room-features li {
+	text-align: center;
+}
+
+.resoto-room-wrap ul.room-features li span:first-child {
+    font-size: 40px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.hb_single_room .hb_single_room_details .hb_single_room_tabs {
+	padding-bottom: 10px;
+}
+
+.hb_single_room .hb_single_room_details .hb_single_room_tabs {
+    padding-left: 0px;
+}
+
+.hb_single_room .hb_single_room_details .hb_single_room_tabs>li a.active::after {
+    background: #ec6a2a;
+}
+
+.hb_single_room .hb_single_room_details .hb_single_room_tabs>li a::after {
+	bottom: -12px;
+}
+
+.hb_single_room .hb_single_room_details .hb_single_room_tabs_content {
+    padding: 10px 0;
+}
+
+.hb_single_room .price {
+    float: none;
+    font-size: 16px;
+    display: inline-block;
+    background: #353535;
+    padding: 10px 20px;
+    margin-bottom: 60px;
+    color: #fff;
+    text-align: center;
+}
+
+.hb_single_room .price span.title-price {
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.bg_single_price_wrap {
+    text-align: center;
+    position: relative;
+}
+
+.hb_single_room .price::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #353535;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    z-index: -1;
+}
+
 /** Sidebar Styles **/
 .right-sidebar #secondary {
     width: 27%;
 }
 
-.right-sidebar #secondary .widget-title {
+.right-sidebar #secondary .widget {
+	margin-bottom: 40px;
+}
+
+.right-sidebar #secondary .widget-title,
+.right-sidebar .widget_hb_widget_cart h3 {
     margin-top: 0px;
     margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .right-sidebar #secondary ul {
@@ -2349,6 +2507,47 @@ a.view-more-btn {
 .right-sidebar #secondary ul a:focus {
     color: #ec6a2a;
     padding-left: 10px;
+}
+
+/** Minicart Widget **/
+.right-sidebar .hotel_booking_mini_cart .hb_mini_cart_item .hb_title {
+    font-size: 16px;
+    margin-top: 0px;
+    font-weight: 500;
+}
+
+.right-sidebar .hotel_booking_mini_cart .hb_mini_cart_footer {
+	text-align: left;
+}
+
+.hotel_booking_mini_cart .hb_mini_cart_item .hb_title a {
+	color: #616161;
+}
+
+.hotel_booking_mini_cart .hb_mini_cart_item .hb_title a:hover {
+	color: #ec6a2a;
+}
+
+.hotel_booking_mini_cart .hb_mini_cart_item .hb_mini_cart_remove:hover {
+	background: none;
+	color: #ec6a2a;
+}
+
+.hotel_booking_mini_cart .hb_mini_cart_item .hb_mini_cart_price span {
+	color: #ec6a2a;
+}
+
+.hotel_booking_mini_cart .hb_mini_cart_footer .hb_button {
+	background-color: #ec6a2a;
+	transition: all 0.5s ease;
+}
+
+.hotel_booking_mini_cart .hb_mini_cart_footer .hb_button:hover {
+	background-color: #000;
+}
+
+.hotel_booking_mini_cart .hb_mini_cart_empty {
+	text-align: left;
 }
 
 /** Widget Dropdown (Select) **/
@@ -2565,7 +2764,8 @@ a.view-more-btn {
 }
 
 .site-footer.layout2 ul {
-	display: inline-flex;
+    display: inline-flex;
+    flex-wrap: wrap;
 }
 
 .site-footer.layout2 .footer-menu {

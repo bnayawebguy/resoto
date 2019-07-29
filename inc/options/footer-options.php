@@ -69,8 +69,21 @@
 			Kirki::add_field( 'resoto_copyright_text', [
 				'type'     => 'textarea',
 				'settings' => 'resoto_copyright_text',
-				'label'    => esc_html__( 'Copyright Text', 'kirki' ),
+				'label'    => esc_html__( 'Copyright Text', 'resoto' ),
 				'section'  => 'resoto_footer_options',
+			] );
+
+			/** Enable Go to Top option **/
+			Kirki::add_field( 'resoto_goto_top_link', [
+				'type'        => 'switch',
+				'settings'    => 'resoto_goto_top_link',
+				'label'       => esc_html__( 'This is the label', 'resoto' ),
+				'section'     => 'resoto_footer_options',
+				'default'     => '1',
+				'choices'     => [
+					'on'  => esc_html__( 'Show', 'resoto' ),
+					'off' => esc_html__( 'Hide', 'resoto' ),
+				],
 			] );
 
 	}

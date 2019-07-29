@@ -20,24 +20,25 @@
 				<?php if( is_active_sidebar( 'footer-4' ) ) : ?>
 					<?php dynamic_sidebar( 'footer-4' ); ?>
 				<?php endif; ?>
-		</div>
-	
-		<div class="bottom-footer">
-			<?php
-				if( $copyright_text ) {
-					echo wp_kses_post( $copyright_text );
-				}
-				else {
-			?>
-			<?php echo esc_html__( '&copy; 2019 | All Rights Reserved', 'resoto' ); ?>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'resoto' ), 'resoto', '<a href="https://mysticalthemes.com/">MysticalThemes</a>' );
-				?>
-			<?php
-				}
-			?>
-		</div>
+		</div>		
 	</div> <!-- .rcontainer -->
 </footer><!-- #colophon -->
+<div class="bottom-footer">
+	<div class="rcontainer">
+		<?php
+			if( $copyright_text ) {
+				echo wp_kses_post( $copyright_text );
+			}
+			else {
+		?>
+		<?php echo esc_html__( '&copy; 2019 | All Rights Reserved', 'resoto' ); ?>
+		<span class="sep"> | </span>
+			<?php
+			/* translators: 1: Theme name, 2: Theme author. */
+			printf( esc_html__( 'Theme: %1$s by %2$s.', 'resoto' ), 'resoto', '<a href="https://mysticalthemes.com/">MysticalThemes</a>' );
+			?>
+		<?php
+			}
+		?>
+	</div>
+</div>

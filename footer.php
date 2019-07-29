@@ -20,6 +20,9 @@
 	?>
 
 </div><!-- #page -->
+<?php
+	$goto_toplink = get_theme_mod( 'resoto_goto_top_link', 1 );
+?>
 
 <?php wp_footer(); ?>
 

@@ -9,14 +9,15 @@
 
 			/** Footer Layout **/
 			Kirki::add_field( 'resoto_footer_layout', [
-				'type'        => 'radio-image',
+				'type'        => 'select',
 				'settings'    => 'resoto_footer_layout',
 				'label'       => esc_html__( 'Footer Layout', 'resoto' ),
 				'section'     => 'resoto_footer_options',
 				'default'     => 'layout1',
+				'multiple'    => 1,
 				'choices'     => [
-					'layout1'   => get_template_directory_uri() . '/assets/images/layout1.png',
-					'layout2' => get_template_directory_uri() . '/assets/images/layout2.png',
+					'layout1' => esc_html__( 'Layout 1', 'resoto' ),
+					'layout2' => esc_html__( 'Layout 2', 'resoto' ),
 				],
 			] );
 

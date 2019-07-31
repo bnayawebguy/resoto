@@ -62,8 +62,6 @@ if ( post_password_required() ) {
 				}
 			}
 
-			echo "<div class='clearfix'></div>";
-
 			/**
 			 * hotel_booking_loop_room_price hook
 			 */

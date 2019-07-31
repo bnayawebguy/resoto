@@ -1,0 +1,53 @@
+<?php
+	/** General Options **/
+	function resoto_general_options( $wp_customize ) {
+
+		/** Footer Section **/
+		Kirki::add_section( 'resoto_general_options', array(
+		    'title'          => esc_html__( 'General Settings', 'resoto' ),
+		) );
+
+			/** Template Color **/
+			Kirki::add_field( 'resoto_template_color', [
+				'type'        => 'radio-image',
+				'settings'    => 'resoto_template_color',
+				'label'       => esc_html__( 'Template Color', 'resoto' ),
+				'section'     => 'resoto_general_options',
+				'priority'	  => '1',
+				'default'     => 'orange',
+				'choices'     => [
+					'orange'   => get_template_directory_uri() . '/assets/images/orange.png',
+					'brown' => get_template_directory_uri() . '/assets/images/brown.png',
+					'blue' => get_template_directory_uri() . '/assets/images/blue.png',
+				],
+			] );
+
+			/** Enable Preloader **/
+			Kirki::add_field( 'resoto_enable_preloader', [
+				'type'        => 'switch',
+				'settings'    => 'resoto_enable_preloader',
+				'label'       => esc_html__( 'Enable Preloader', 'resoto' ),
+				'section'     => 'resoto_general_options',
+				'default'     => '1',
+				'choices'     => [
+					'on'  => esc_html__( 'Show', 'resoto' ),
+					'off' => esc_html__( 'Hide', 'resoto' ),
+				],
+			] );
+
+			/** Enable Go to Top option **/
+			Kirki::add_field( 'resoto_goto_top_link', [
+				'type'        => 'switch',
+				'settings'    => 'resoto_goto_top_link',
+				'label'       => esc_html__( 'Enable Goto Top', 'resoto' ),
+				'section'     => 'resoto_general_options',
+				'default'     => '1',
+				'choices'     => [
+					'on'  => esc_html__( 'Enable', 'resoto' ),
+					'off' => esc_html__( 'Disable', 'resoto' ),
+				],
+			] );
+
+	}
+
+	add_filter( 'kirki/fields', 'resoto_general_options' );

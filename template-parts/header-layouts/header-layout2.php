@@ -89,7 +89,7 @@
 						<span class="lni-search"></span>
 						<div class="resoto-search-form">
 							<?php get_search_form(); ?>
-							<span class="lni-cross-circle"></span>
+							<span class="lni-close"></span>
 						</div>
 					</div>
 				<?php endif; ?>

@@ -11,14 +11,15 @@
 
 			/** Rooms Page Layout **/
 			Kirki::add_field( 'resoto_rooms_page_layout', [
-				'type'        => 'radio-image',
+				'type'        => 'select',
 				'settings'    => 'resoto_rooms_page_layout',
 				'label'       => esc_html__( 'Rooms Page Layout', 'resoto' ),
 				'section'     => 'resoto_room_options',
 				'default'     => 'list',
+				'multiple'    => 1,
 				'choices'     => [
-					'list'   => get_template_directory_uri() . '/assets/images/list.png',
-					'grid' => get_template_directory_uri() . '/assets/images/grid.png',
+					'list' => esc_html__( 'List Layout', 'resoto' ),
+					'grid' => esc_html__( 'Grid Layout', 'resoto' ),
 				],
 			] );
 

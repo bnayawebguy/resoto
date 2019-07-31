@@ -1,4 +1,8 @@
 jQuery(document).ready(function($){
+	/** Preloader **/
+	$(window).on('load', function() {
+		$("#resoto-preloader").fadeOut("slow");
+	});
 
 	/** Sidemenu **/
 	$('#simple-menu').sidr({
@@ -32,7 +36,6 @@ jQuery(document).ready(function($){
 	/** Search Popup **/
 	$('.resoto-search > span').on('click', function(e) {
 		e.preventDefault();
-		console.log('alkjflksdjfasdfa');
 
 		$(this).next('.resoto-search-form').addClass('active');
 	});
@@ -50,6 +53,33 @@ jQuery(document).ready(function($){
 		qty = parseInt(qty);
 		qty -= 1;
 		cart_qty.text(qty);
+	});
+
+	/** Single Room Gallery **/
+	$('.resoto_hb_gallery').owlCarousel({
+		items: 1,
+		nav: true,
+		navText: ['<i class="lni-arrow-left"></i>', '<i class="lni-arrow-right"></i>'],
+		navElement: 'span',
+		loop: true,
+		dots: true,
+		singleItem: true,
+		dots: true
+	});
+
+	$(window).on('scroll', function(){
+		if( $(window).scrollTop() >= 500 ) {
+			$('#resoto-goto-top').addClass('active');
+		} else {
+			$('#resoto-goto-top').removeClass('active');
+		}
+	});	
+
+	/** Scroll To Top **/
+	$("#resoto-goto-top").on( 'click', function(e) {
+		e.preventDefault();
+		$("html, body").animate({ scrollTop: 0 }, "slow");
+		return false;
 	});
 
 });

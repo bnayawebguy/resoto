@@ -12,14 +12,15 @@
 
 			/** Blog Layout **/
 			Kirki::add_field( 'resoto_blog_layout', [
-				'type'        => 'radio-image',
+				'type'        => 'select',
 				'settings'    => 'resoto_blog_layout',
 				'label'       => esc_html__( 'Blog Layout', 'resoto' ),
 				'section'     => 'resoto_blog_options',
 				'default'     => 'layout1',
+				'multiple'    => 1,
 				'choices'     => [
-					'layout1'   => get_template_directory_uri() . '/assets/images/layout1.png',
-					'layout2' => get_template_directory_uri() . '/assets/images/layout2.png'
+					'layout1' => esc_html__( 'Classic', 'resoto' ),
+					'layout2' => esc_html__( 'Grid', 'resoto' ),
 				],
 			] );
 

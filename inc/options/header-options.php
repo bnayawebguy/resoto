@@ -87,16 +87,6 @@
 					'default'  => '',
 				] );
 
-				/** Background Color **/
-				Kirki::add_field( 'resoto_top_header_bgcolor', [
-					'type'        => 'color',
-					'settings'    => 'resoto_top_header_bgcolor',
-					'label'       => __( 'Background Color', 'resoto' ),
-					'description' => esc_html__( 'Background color for top header.', 'resoto' ),
-					'section'     => 'resoto_top_header',
-					'default'     => '#0088CC',
-				] );
-
 			/** Main Header **/
 			Kirki::add_section( 'title_tagline', array(
 			    'title'          => esc_html__( 'Main Header', 'resoto' ),
@@ -111,21 +101,8 @@
 					'section'     => 'title_tagline',
 					'default'     => 'layout1',
 					'choices'     => [
-						'layout1'   => get_template_directory_uri() . '/assets/images/layout1.png',
-						'layout2' => get_template_directory_uri() . '/assets/images/layout2.png',
-					],
-				] );
-
-				/** Header Background Color **/
-				Kirki::add_field( 'resoto_header_bgcolor', [
-					'type'        => 'color',
-					'settings'    => 'color_setting_rgba',
-					'label'       => __( 'Background Color', 'resoto' ),
-					'description' => esc_html__( 'Set background color for main header.', 'resoto' ),
-					'section'     => 'title_tagline',
-					'default'     => '#0088CC',
-					'choices'     => [
-						'alpha' => true,
+						'layout1'   => get_template_directory_uri() . '/assets/images/header-layout1.png',
+						'layout2' => get_template_directory_uri() . '/assets/images/header-layout2.png',
 					],
 				] );
 

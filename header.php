@@ -23,6 +23,7 @@
 <?php do_action('resoto_responsive_sidemenu'); ?>
 
 <body <?php body_class(); ?>>
+<?php do_action( 'resoto_preloader' ); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'resoto' ); ?></a>
 

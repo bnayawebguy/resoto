@@ -179,8 +179,42 @@
     function resoto_get_cart_items_count() {
 		$cart  = WP_Hotel_Booking::instance()->cart;
 		$rooms = $cart->get_rooms();
-		$cart_items = ($rooms) ? $rooms : 0;
+		$cart_items = ($rooms) ? count($rooms) : 0;
 		?>
 		<i class="resoto-cart-qty"><?php echo esc_html($cart_items); ?></i>
 		<?php
 	}
+
+	/** Goto Top **/
+	function resoto_goto_top_cb() {
+		$goto_top = get_theme_mod( 'resoto_goto_top', 1 );
+		if( $goto_top ) {
+			?>
+			<a href="" id="resoto-goto-top"><i class="lni-angle-double-up"></i></a>
+			<?php
+		}
+		?>
+		<?php
+	}
+
+	add_action( 'resoto_goto_top', 'resoto_goto_top_cb' );
+
+	/** Preloader **/
+	function resoto_preloader_cb() {
+		$enable_preloader = get_theme_mod( 'resoto_enable_preloader', 1 );
+
+		if( $enable_preloader ) :
+		?>
+		<div id="resoto-preloader">
+			<div class="sk-folding-cube">
+			  <div class="sk-cube1 sk-cube"></div>
+			  <div class="sk-cube2 sk-cube"></div>
+			  <div class="sk-cube4 sk-cube"></div>
+			  <div class="sk-cube3 sk-cube"></div>
+			</div>
+		</div>
+		<?php
+		endif;
+	}
+
+	add_action( 'resoto_preloader', 'resoto_preloader_cb' );

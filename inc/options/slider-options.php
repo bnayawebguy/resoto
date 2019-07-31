@@ -41,9 +41,24 @@
 					'section'     => 'resoto_slider_options',
 					'default'     => 'layout1',
 					'choices'     => [
-						'layout1'   => get_template_directory_uri() . '/assets/images/layout1.png',
-						'layout2' => get_template_directory_uri() . '/assets/images/layout2.png',
-						'layout3'  => get_template_directory_uri() . '/assets/images/layout3.png',
+						'layout1'   => get_template_directory_uri() . '/assets/images/slider-layout1.png',
+						'layout2' => get_template_directory_uri() . '/assets/images/slider-layout2.png',
+						'layout3'  => get_template_directory_uri() . '/assets/images/slider-layout3.png',
+					],
+				] );
+
+				/** Slider Layout **/
+				Kirki::add_field( 'resoto_slider_layout', [
+					'type'        => 'select',
+					'settings'    => 'resoto_slider_layout',
+					'label'       => esc_html__( 'Slider Layout', 'resoto' ),
+					'section'     => 'resoto_slider_options',
+					'default'     => 'layout1',
+					'multiple'    => 1,
+					'choices'     => [
+						'layout1' => esc_html__( 'Left Aligned', 'resoto' ),
+						'layout2' => esc_html__( 'Center Aligned', 'resoto' ),
+						'layout3' => esc_html__( 'Right Aligned', 'resoto' ),
 					],
 				] );
 

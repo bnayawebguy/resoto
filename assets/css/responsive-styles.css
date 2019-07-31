@@ -49,6 +49,10 @@
 	#primary-menu {
 		display: none;
 	}
+
+	.hb_single_room .hb_single_room_details .hb_single_room_tabs>li {
+		padding-right: 10px;
+	}
 }
 
 @media screen and (max-width: 650px){
@@ -58,6 +62,41 @@
 
 	.tp-hotel-booking.grid-layout > li.hb_room {
 		width: 100%;
+	}
+
+	.hb_single_room_details .comment_container {
+		flex-flow: column;
+	}
+
+	.hb_single_room_details #comments .commentlist .comment-text {
+		margin-left: 0;
+		width: 100%;
+		border-top-left-radius: 10px;
+	}
+
+	.hb_single_room_details #comments .commentlist .comment-avatar-wrap {
+		width: 100%;
+	}
+
+	.hb_single_room_details #comments .commentlist .comment-text::after {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 585px){
+	.hb_single_room .hb_single_room_details .hb_single_room_tabs {
+		display: flex;
+		flex-flow: column;
+		text-align: center;
+	}
+
+	.hb_single_room .hb_single_room_details .hb_single_room_tabs>li a:hover,
+	.hb_single_room .hb_single_room_details .hb_single_room_tabs>li a.active {
+		color: #ec6a2a;
+	}
+
+	.hb_single_room .hb_single_room_details .hb_single_room_tabs>li a::after {
+		display: none;
 	}
 }
 
@@ -79,7 +118,9 @@
 	}
 
 	body.right-sidebar #primary,
-	.right-sidebar #secondary {
+	.right-sidebar #secondary,
+	.resoto-room-wrap.has-sidebar .hb_single_room,
+	.resoto-room-wrap.has-sidebar .sroom-sidebar {
 		width: 100%;
 	}
 

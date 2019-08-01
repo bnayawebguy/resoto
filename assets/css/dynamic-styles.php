@@ -95,7 +95,7 @@
 					#hotel-booking-cart table a:focus,
 					#hotel-booking-payment table a:hover,
 					#hotel-booking-payment table a:focus,
-					header.layout1 .main-navigation ul li a:hover {
+					header.layout1 .main-navigation ul li a:hover{
 						color: $tpl_color;
 					}
 				";
@@ -168,6 +168,53 @@
 						background-color: $tpl_color_light;
 					}
 				";
+
+			/**
+			 * Typography Options
+			 */
+
+			// Heading Font
+			$heading_fonts = get_theme_mod( 'resoto_heading', '' );
+			if( !empty($heading_fonts) ) {
+				$custom_css .= "
+					h1,
+					h2,
+					h3,
+					h4,
+					h5,
+					h6 {
+						font-family: {$heading_fonts['font-family']};
+						font-weight: {$heading_fonts['variant']};
+						color: {$heading_fonts['color']};
+					}
+				";
+			}
+
+			// Body Font
+			$body_fonts = get_theme_mod( 'resoto_body', '' );
+			if( !empty($body_fonts) ) {
+				$custom_css .= "
+					body {
+						font-family: {$body_fonts['font-family']};
+						font-weight: {$body_fonts['variant']};
+						color: {$body_fonts['color']};
+					}
+				";
+			}
+
+			// Widget Title Font
+			$widget_fonts = get_theme_mod( 'resoto_widget_title', '' );
+			if( !empty($widget_fonts) ) {
+				$custom_css .= "
+					.right-sidebar #secondary .widget-title,
+					.right-sidebar .widget_hb_widget_cart h3,
+					.sroom-sidebar .widget h3 {
+						font-family: {$widget_fonts['font-family']};
+						font-weight: {$widget_fonts['variant']};
+						color: {$widget_fonts['color']};
+					}
+				";
+			}
 				
 		}
 
@@ -211,6 +258,3 @@
 
 		return $output;
 	}
-
-	/*$heading_typo = get_theme_mod( 'resoto_heading1a', '' );
-	pr($heading_typo);*/

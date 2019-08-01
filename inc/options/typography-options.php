@@ -2,6 +2,14 @@
 	/** Typography Options **/
 	function resoto_typography_options( $wp_customize ) {
 
+		$gfonts = array(
+			'Montserrat',
+			'Poppins',
+			'Playfair Display',
+			'Open Sans',
+			'Merriweather',
+		);
+
 		/** Typography Panel **/
 		Kirki::add_panel( 'resoto_typography_panel', array(
 		    'title'       => esc_html__( 'Typography', 'resoto' ),
@@ -16,21 +24,20 @@
 			) );
 
 				/** Heading 1 Typography **/
-				Kirki::add_field( 'resoto_heading1a', [
+				Kirki::add_field( 'resoto_heading', [
 					'type'        => 'typography',
-					'settings'    => 'resoto_heading1a',
-					'label'       => esc_html__( 'Heading 1', 'resoto' ),
+					'settings'    => 'resoto_heading',
+					'label'       => esc_html__( 'Heading', 'resoto' ),
 					'section'     => 'resoto_heading_typo',
 					'choices' => [
 						'fonts' => [
-							'google' => [ 'Roboto', 'Open Sans', 'Lato', 'Noto Serif', 'Noto Sans' ],
+							'google' => $gfonts,
 						],
 					],
 					'default'     => [
-						'font-family'    => 'Roboto',
-						'variant'        => 'regular',
-						'color'          => '#333333',
-						'text-transform' => 'none',
+						'font-family'    => 'Poppins',
+						'variant'        => '500',
+						'color'          => '#616161',
 					],
 					'transport'   => 'auto',
 					'output'      => [
@@ -46,7 +53,7 @@
 			    'panel'          => 'resoto_typography_panel',
 			) );
 
-				/** Heading 1 Typography **/
+				/** Body Typography **/
 				Kirki::add_field( 'resoto_body', [
 					'type'        => 'typography',
 					'settings'    => 'resoto_body',
@@ -54,14 +61,13 @@
 					'section'     => 'resoto_body_typo',
 					'choices' => [
 						'fonts' => [
-							'google' => [ 'Roboto', 'Open Sans', 'Lato', 'Noto Serif', 'Noto Sans' ],
+							'google' => $gfonts,
 						],
 					],
 					'default'     => [
-						'font-family'    => 'Roboto',
+						'font-family'    => 'Montserrat',
 						'variant'        => 'regular',
-						'color'          => '#333333',
-						'text-transform' => 'none',
+						'color'          => '#616161',
 					],
 					'transport'   => 'auto',
 					'output'      => [
@@ -85,19 +91,18 @@
 					'section'     => 'resoto_widget_typo',
 					'choices' => [
 						'fonts' => [
-							'google' => [ 'Roboto', 'Open Sans', 'Lato', 'Noto Serif', 'Noto Sans' ],
+							'google' => $gfonts,
 						],
 					],
 					'default'     => [
-						'font-family'    => 'Roboto',
-						'variant'        => 'regular',
-						'color'          => '#333333',
-						'text-transform' => 'none',
+						'font-family'    => 'Poppins',
+						'variant'        => '600',
+						'color'          => '#616161',
 					],
 					'transport'   => 'auto',
 					'output'      => [
 						[
-							'element' => '.widget-title',
+							'element' => '.right-sidebar #secondary .widget-title, .right-sidebar .widget_hb_widget_cart h3, .sroom-sidebar .widget h3',
 						],
 					],
 				] );

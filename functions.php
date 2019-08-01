@@ -180,9 +180,6 @@ add_action( 'widgets_init', 'resoto_widgets_init' );
 /** Enqueue Google Fonts **/
 function resoto_enqueue_google_fonts() {
 	$google_fonts = array(
-		'Playfair Display' => array(
-			'weights' => array('regular', 'italic', '700', '900'),
-		),
 		'Work Sans' => array(
 			'weights' => array('regular', 'italic', '700', '900'),
 		),
@@ -193,6 +190,8 @@ function resoto_enqueue_google_fonts() {
 			'weights' => array('400', '500', '600', '700', '800', '900'),
 		),
 	);
+
+	$google_fonts = apply_filters( 'resoto_google_fonts', $google_fonts );
 
 	foreach( $google_fonts as $family => $font ) {
 		$font_query[] = $family . ':' . implode(',', $font['weights']);

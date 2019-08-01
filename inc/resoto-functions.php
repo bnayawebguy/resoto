@@ -218,3 +218,30 @@
 	}
 
 	add_action( 'resoto_preloader', 'resoto_preloader_cb' );
+
+	/** Add Dynamic Fonts **/
+	function resoto_dynamic_google_fonts( $google_fonts ) {
+
+		$fonts = array();
+		$font_weights = array('400', '500', '600', '700', '800', '900');
+
+		/** Heading Font **/
+		$fonts[] = get_theme_mod( 'resoto_heading', '' );
+		/** Body Font **/
+		$fonts[] = get_theme_mod( 'resoto_body', '' );
+
+		/** Body Font **/
+		$fonts[] = get_theme_mod( 'resoto_widget_title', '' );
+
+		foreach( $fonts as $font ) {
+			if( !empty( $font ) ) {
+				$google_fonts[$font['font-family']] = array(
+					'weights' => $font_weights,
+				);
+			}
+		}
+
+		return $google_fonts;
+	}
+
+	add_filter( 'resoto_google_fonts', 'resoto_dynamic_google_fonts' );

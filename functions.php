@@ -180,9 +180,6 @@ add_action( 'widgets_init', 'resoto_widgets_init' );
 /** Enqueue Google Fonts **/
 function resoto_enqueue_google_fonts() {
 	$google_fonts = array(
-		'Work Sans' => array(
-			'weights' => array('regular', 'italic', '700', '900'),
-		),
 		'Montserrat' => array(
 			'weights' => array('400', '500', '600', '700', '800', '900'),
 		),
@@ -304,22 +301,3 @@ require get_template_directory() . '/inc/breadcrumbs.php';
 
 /** Resoto Breadcrumb **/
 require get_template_directory() . '/assets/css/dynamic-styles.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
-
-function pr($data) {
-	echo "<pre>";
-	print_r($data);
-	echo "</pre>";
-}
-
-function vr($data) {
-	echo "<pre>";
-	var_dump($data);
-	echo "</pre>";
-}

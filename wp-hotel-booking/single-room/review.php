@@ -30,13 +30,13 @@ $settings = WPHB_Settings::instance();
 
 			<?php if ( $rating && $settings->get( 'enable_review_rating' ) ) { ?>
                 <div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating" class="star-rating"
-                     title="<?php echo sprintf( __( 'Rated %d out of 5', 'wp-hotel-booking' ), $rating ) ?>">
+                     title="<?php echo sprintf( __( 'Rated %d out of 5', 'resoto' ), $rating ) ?>">
                     <span style="width:<?php echo ( $rating / 5 ) * 100; ?>%"></span>
                 </div>
 			<?php } ?>
 
 			<?php if ( $comment->comment_approved == '0' ) { ?>
-                <p class="meta"><em><?php _e( 'Your comment is awaiting approval', 'wp-hotel-booking' ); ?></em></p>
+                <p class="meta"><em><?php _e( 'Your comment is awaiting approval', 'resoto' ); ?></em></p>
 			<?php } else { ?>
                 <p class="meta">
                     <strong itemprop="author"><?php comment_author(); ?></strong>&ndash;

@@ -25,35 +25,9 @@ $galleries = $hb_room->get_galleries( false );
         <div class="resoto_hb_gallery owl-carousel">
             <?php foreach( $galleries as $gallery ) : ?>
                 <div class="gal-img-wrap">
-                    <img src="<?php echo esc_url( $gallery['src'] ); ?>" alt="<?php esc_attr_e( $gallery['alt'] ); ?>">
+                    <img src="<?php echo esc_url( $gallery['src'] ); ?>" alt="<?php echo esc_attr( $gallery['alt'] ); ?>">
                 </div>
             <?php endforeach; ?>
         </div>
     </div>
 <?php endif; ?>
-
-<?php /*
-<?php if ( $galleries ) { ?>
-    <div class="hb_room_gallery camera_wrap camera_emboss" id="camera_wrap_<?php the_ID() ?>">
-		<?php foreach ( $galleries as $key => $gallery ) { ?>
-            <div data-thumb="<?php echo esc_url( $gallery['thumb'] ); ?>"
-                 data-src="<?php echo esc_url( $gallery['src'] ); ?>"></div>
-		<?php } ?>
-    </div>
-
-    <script type="text/javascript">
-        (function ($) {
-            "use strict";
-            $(document).ready(function () {
-                $('#camera_wrap_<?php the_ID() ?>').camera({
-                    height: '470px',
-                    loader: 'none',
-                    pagination: false,
-                    thumbnails: true
-                });
-            });
-        })(jQuery);
-    </script>
-<?php } else {
-	echo get_the_post_thumbnail( get_the_ID() );
-} */ ?>

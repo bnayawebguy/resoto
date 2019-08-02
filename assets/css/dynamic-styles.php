@@ -46,6 +46,9 @@
 				$tpl_color = '#ec6a2a';
 			}
 
+			/** Darker Color **/
+			$tpl_color_darker = resoto_adjust_color( $tpl_color, -0.1 );
+
 			/** 0.4 Lighter Color **/
 			$tpl_color_light = resoto_hex2rgba( $tpl_color, 0.4 );
 
@@ -95,7 +98,10 @@
 					#hotel-booking-cart table a:focus,
 					#hotel-booking-payment table a:hover,
 					#hotel-booking-payment table a:focus,
-					header.layout1 .main-navigation ul li a:hover{
+					header.layout1 .main-navigation ul li a:hover,
+					.is-style-outline .wp-block-button__link,
+					.page-links span,
+					.page-links a:hover {
 						color: $tpl_color;
 					}
 				";
@@ -141,7 +147,12 @@
 					#hotel-booking-payment button[type=\"submit\"],
 					header.layout1 .book-now-btn,
 					.resoto-hotelcart .hotel_booking_mini_cart .hb_mini_cart_footer .hb_button,
-					.ui-datepicker.ui-widget .ui-datepicker-calendar .ui-state-default:hover {
+					.ui-datepicker.ui-widget .ui-datepicker-calendar .ui-state-default:hover,
+					body.blog-layout1 article.sticky .post-title::before,
+					.nav-previous a,
+					.nav-next a,
+					.wp-block-button__link,
+					.wp-block-file a.wp-block-file__button {
 						background-color: $tpl_color;
 					}
 				";
@@ -154,7 +165,8 @@
 					.right-sidebar #secondary button,
 					.sroom-sidebar .hotel-booking-search button,
 					.hb-select-extra-results .check-wrap input:checked ~ .checkmark,
-					.hb_payment_all .check-wrap input:checked ~ .checkmark {
+					.hb_payment_all .check-wrap input:checked ~ .checkmark,
+					.is-style-outline .wp-block-button__link {
 						border-color: $tpl_color;
 					}
 				";
@@ -166,6 +178,17 @@
 				$custom_css .= "
 					.resoto-slider .owl-dots button.owl-dot {
 						background-color: $tpl_color_light;
+					}
+				";
+
+			/**
+			 * Darker Color
+			 */
+
+				/** Background Color **/
+				$custom_css .= "
+					.widget.widget_calendar table caption {
+						background-color: $tpl_color_darker;
 					}
 				";
 
@@ -257,4 +280,21 @@
 		}
 
 		return $output;
+	}
+
+	/** Color Adjustments **/
+	function resoto_adjust_color($hexcolor, $percent) {
+	  if ( strlen( $hexcolor ) < 6 ) {
+	    $hexcolor = $hexcolor[0] . $hexcolor[0] . $hexcolor[1] . $hexcolor[1] . $hexcolor[2] . $hexcolor[2];
+	  }
+	  $hexcolor = array_map('hexdec', str_split( str_pad( str_replace('#', '', $hexcolor), 6, '0' ), 2 ) );
+
+	  foreach ($hexcolor as $i => $color) {
+	    $from = $percent < 0 ? 0 : $color;
+	    $to = $percent < 0 ? $color : 255;
+	    $pvalue = ceil( ($to - $from) * $percent );
+	    $hexcolor[$i] = str_pad( dechex($color + $pvalue), 2, '0', STR_PAD_LEFT);
+	  }
+
+	  return '#' . implode($hexcolor);
 	}

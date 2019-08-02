@@ -30,7 +30,7 @@ if ( post_password_required() ) {
 	$room_class = '';
 	$room_class = ( is_active_sidebar( 'hb-room-sidebar' ) ) ? ' has-sidebar' : '';
 ?>
-<div class="resoto-room-wrap<?php esc_attr_e( $room_class ); ?>">
+<div class="resoto-room-wrap<?php echo esc_attr( $room_class ); ?>">
 
 	<div id="room-<?php the_ID(); ?>" <?php post_class( 'hb_single_room' ); ?>>
 
@@ -75,7 +75,7 @@ if ( post_password_required() ) {
 						?>
 						<li>
 							<?php if( isset( $feature['icon'] ) ) : ?>
-								<span class="icon <?php esc_attr_e( $feature['icon'] ); ?>" ></span>
+								<span class="icon <?php echo esc_attr( $feature['icon'] ); ?>" ></span>
 							<?php endif; ?>
 
 							<?php if( isset( $feature['name'] ) ) : ?>

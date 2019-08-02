@@ -89,7 +89,7 @@
 			?>
 				<div class="resoto-banner">
 					<div class="rcontainer">
-						<h2 class="page-title"><?php echo esc_html(resoto_get_page_title()); ?></h2>
+						<h2 class="page-title"><?php echo wp_kses_post(resoto_get_page_title()); ?></h2>
 						<?php
 							resoto_breadcrumb_trail( array(
 								'container' => '',
@@ -103,6 +103,7 @@
 	}
 	add_action( 'resoto_page_banner', 'resoto_page_banner_cb' );
 
+	/** Category Slug to Id **/
 	function resoto_category_slug_to_id( $cats ) {
 		$cat_ids = array();
 
@@ -177,6 +178,10 @@
 
     /** Get Cart Items Count **/
     function resoto_get_cart_items_count() {
+    	if( !class_exists( 'WP_Hotel_Booking' ) ) {
+    		return;
+    	}
+
 		$cart  = WP_Hotel_Booking::instance()->cart;
 		$rooms = $cart->get_rooms();
 		$cart_items = ($rooms) ? count($rooms) : 0;

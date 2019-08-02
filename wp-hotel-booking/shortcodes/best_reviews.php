@@ -32,7 +32,7 @@ defined( 'ABSPATH' ) || exit(); ?>
 
 				<li>
 					<div class="img-wrap">
-						<img src="<?php echo esc_url( $img[0] ); ?>" alt="<?php esc_attr_e( $image_alt ); ?>">
+						<img src="<?php echo esc_url( $img[0] ); ?>" alt="<?php echo esc_attr( $image_alt ); ?>">
 					</div>
 					<div class="room-details">
 						<h4><?php the_title(); ?></h4>

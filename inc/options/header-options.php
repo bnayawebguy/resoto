@@ -20,7 +20,7 @@
 					'settings'    => 'resoto_enable_top_header',
 					'label'       => esc_html__( 'Enable Top Header', 'resoto' ),
 					'section'     => 'resoto_top_header',
-					'default'     => '1',
+					'default'     => 0,
 					'choices'     => [
 						'on'  => esc_html__( 'Enable', 'resoto' ),
 						'off' => esc_html__( 'Disable', 'resoto' ),
@@ -110,12 +110,12 @@
 				Kirki::add_field( 'resoto_show_search', [
 					'type'        => 'switch',
 					'settings'    => 'resoto_show_search',
-					'label'       => esc_html__( 'Display Search in Header', 'resoto-companion' ),
+					'label'       => esc_html__( 'Display Search in Header', 'resoto' ),
 					'section'     => 'section_id',
 					'default'     => '1',
 					'choices'     => [
-						'on'  => esc_html__( 'Show', 'resoto-companion' ),
-						'off' => esc_html__( 'Hide', 'resoto-companion' ),
+						'on'  => esc_html__( 'Show', 'resoto' ),
+						'off' => esc_html__( 'Hide', 'resoto' ),
 					],
 				] );
 
@@ -123,12 +123,12 @@
 				Kirki::add_field( 'resoto_show_hotelcart', [
 					'type'        => 'switch',
 					'settings'    => 'resoto_show_hotelcart',
-					'label'       => esc_html__( 'Display Hotel Cart in Header', 'resoto-companion' ),
+					'label'       => esc_html__( 'Display Hotel Cart in Header', 'resoto' ),
 					'section'     => 'section_id',
 					'default'     => '1',
 					'choices'     => [
-						'on'  => esc_html__( 'Enable', 'resoto-companion' ),
-						'off' => esc_html__( 'Disable', 'resoto-companion' ),
+						'on'  => esc_html__( 'Enable', 'resoto' ),
+						'off' => esc_html__( 'Disable', 'resoto' ),
 					],
 				] );
 

@@ -1,14 +1,14 @@
 /*!
 Theme Name: Resoto
-Theme URI: http://underscores.me/
-Author: Underscores.me
-Author URI: http://underscores.me/
-Description: Description
+Theme URI: https://mysticalthemes.com/wordpress-themes/resoto
+Author: bnayawpguy
+Author URI: https://mysticalthemes.com
+Description: Resoto Hotel WordPress Theme is a perfect template designed for resort, hotel, villas , guesthouse or other travel tourism and hotel business. The template is based on Elementor plugin which gives you wide range of opportunity to uniquely design attractive beautiful website. The template is based on WP Hotel Booking plugin which provides the options to configure the hotel accomodations. The template is not only limited to the resorts and hotel website you may also use the template to create a stunning corporate, blog website and many more.
 Version: 1.0.0
 License: GNU General Public License v2 or later
-License URI: LICENSE
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: resoto
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: blog, holiday, food-and-drink, one-column, two-columns, right-sidebar, footer-widgets, custom-menu, custom-logo, featured-images, threaded-comments, full-width-template, rtl-language-support, translation-ready, theme-options, sticky-post
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -525,6 +525,12 @@ table {
 	width: 100%;
 }
 
+td, th {
+    padding: 0;
+    border: 1px solid #eee;
+    padding: 10px;
+}
+
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -1036,9 +1042,10 @@ header .main-navigation ul li a {
 
 header .site-branding h1.site-title,
 header .site-branding p.site-title {
-	font-size: 40px;
+    font-size: 40px;
     margin: 0px;
     font-weight: 800;
+    line-height: 40px;
 }
 
 header .site-branding h1.site-title a,
@@ -1657,6 +1664,8 @@ header.layout2 .resoto-hotelcart > span i {
     margin: 0;
     font-size: 40px;
     line-height: 50px;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .resoto-banner ul {
@@ -1740,6 +1749,17 @@ body.blog-layout1 article,
 body.search-results article {
     padding: 40px 0px;
     border-bottom: 1px solid #eaeaea;
+}
+
+body.blog-layout1 article.sticky .post-title::before {
+    content: "\e949";
+    font-family: lineicons;
+    background-color: #ec6a2a;
+    color: #fff;
+    font-size: 14px;
+    padding: 5px 12px;
+    border-radius: 50%;
+    display: inline-block;
 }
 
 body.blog-layout1 article:first-child,
@@ -1853,6 +1873,87 @@ body.blog-layout2 .blog-post-contents .post-title-metas .post-metas span:last-ch
 
 body.blog-layout2 article a.readmore-btn {
 	margin-left: 0px;
+}
+
+/** Single Post **/
+.site-main .comment-navigation, .site-main .posts-navigation, .site-main .post-navigation {
+	margin-top: 40px;
+}
+
+.comment-navigation .nav-previous, .posts-navigation .nav-previous, .post-navigation .nav-previous,
+.comment-navigation .nav-next, .posts-navigation .nav-next, .post-navigation .nav-next {
+	width: 48%;
+}
+
+.nav-previous a,
+.nav-next a {
+    color: #fff;
+    background: #ec6a2a;
+    padding: 10px;
+    display: inline-block;
+    transition: all 0.4s ease;
+}
+
+.nav-previous a:hover,
+.nav-next a:hover {
+	background-color: #000000;
+	color: #fff;
+}
+
+.nav-previous a::before {
+    content: "\ea54";
+    margin-right: 10px;
+    font-family: lineicons;
+}
+
+.nav-next a::after {
+    content: "\ea55";
+    margin-right: 10px;
+    font-family: lineicons;
+}
+
+.wp-block-button__link {
+	transition: all 0.4s ease;
+}
+
+.wp-block-button__link:hover {
+    background: #000000;
+}
+
+.is-style-outline .wp-block-button__link:hover {
+	border-color: #000000;
+	background-color: #000000;
+	color: #ffffff;
+}
+
+.has-large-font-size {
+    line-height: 45px;
+}
+
+.wp-block-file a.wp-block-file__button {
+    background: #ec6a2a;
+    transition: all 0.4s ease;
+}
+
+.wp-block-file a.wp-block-file__button:hover {
+    background: #000000;
+}
+
+.page-links span {
+    color: #ec6a2a;
+    font-weight: bold;
+}
+
+.page-links a {
+    transition: all 0.4s ease;
+}
+
+.page-links a:hover {
+    color: #ec6a2a;
+}
+
+.post-password-form input {
+    border-radius: 0px;
 }
 
 /** Pagination Styles **/
@@ -2104,6 +2205,10 @@ body.blog-layout2 article a.readmore-btn {
 
 .comments-title span {
     color: #ec6a2a;
+}
+
+.single ol {
+	list-style: none;
 }
 
 .single .comments-area .comment-list {
@@ -2739,6 +2844,65 @@ a.view-more-btn:hover {
     padding-left: 10px;
 }
 
+ul.wp-block-archives,
+ul.wp-block-categories,
+ul.wp-block-categories ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.wp-block-categories ul {
+	padding-left: 10px;
+}
+
+ul.wp-block-archives a,
+ul.wp-block-categories a {
+    display: inline-block;
+    min-width: 190px;
+    border-bottom: 1px solid #f1f1f1;
+    padding: 10px;
+}
+
+ul.wp-block-categories ul li:first-child a {
+	border-bottom: 1px solid #f1f1f1;
+}
+
+ul.wp-block-archives li:last-child a,
+ul.wp-block-categories li:last-child a {
+    border: none;
+}
+
+.wp-block-archives select {
+    border-radius: 0px;
+    background: #fbfbfb;
+    padding: 10px;
+    border-color: #f1f1f1;
+}
+
+ol.wp-block-latest-comments {
+    padding: 0;
+}
+
+ol.wp-block-latest-comments li:last-child {
+    border: none;
+}
+
+.wp-block-latest-posts {
+    list-style: none;
+    margin: 0;
+    width: 200px;
+    padding: 0;
+}
+
+.wp-block-latest-posts li {
+    min-width: 200px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ececec;
+    background: #fdfdfd;
+}
+
 /** Minicart Widget **/
 .right-sidebar .hotel_booking_mini_cart .hb_mini_cart_item .hb_title {
     font-size: 16px;
@@ -2837,6 +3001,11 @@ a.view-more-btn:hover {
     color: #fff;
     font-size: 12px;
     text-align: center;
+}
+
+.widget.widget_calendar table td a {
+    font-weight: bold;
+    color: #fff;
 }
 
 /** Tag Cloud **/

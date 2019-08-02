@@ -18,7 +18,7 @@
 		?>
 		<div class="post-image">
 			<a href="<?php the_permalink(); ?>">
-				<img src="<?php echo esc_url( $image[0] ); ?>" alt="<?php esc_attr_e( $image_alt ); ?>">
+				<img src="<?php echo esc_url( $image[0] ); ?>" alt="<?php echo esc_attr( $image_alt ); ?>">
 			</a>
 		</div>
 	<?php endif; ?>

@@ -53,7 +53,7 @@ $cart_item = $cart->get_cart_item( $cart_id ); ?>
 							<?php //} ?>
                             <label>
                                 <strong><?php echo $extra->price; ?></strong>
-                                <small><?php printf( '/ %s', $extra->respondent_name ? $extra->respondent_name : __( 'Package', 'wp-hotel-booking' ) ) ?></small>
+                                <small><?php printf( '/ %s', $extra->respondent_name ? $extra->respondent_name : __( 'Package', 'resoto' ) ) ?></small>
                             </label>
                         </div>
                     </div>
@@ -66,10 +66,10 @@ $cart_item = $cart->get_cart_item( $cart_id ); ?>
 		<?php wp_nonce_field( 'hb_select_extra_nonce_action', 'nonce' ); ?>
 		<?php do_action( 'hotel_booking_after_select_extra', $room_id ); ?>
         <a href="javascript:history.go(-1)"
-           class="hb_button hb_button_secondary"><?php _e( 'Back to search', 'wp-hotel-booking' ); ?></a>
+           class="hb_button hb_button_secondary"><?php _e( 'Back to search', 'resoto' ); ?></a>
 
-        <button type="submit" class="hb_button"><?php _e( 'Next step', 'wp-hotel-booking' ); ?></button>
+        <button type="submit" class="hb_button"><?php _e( 'Next step', 'resoto' ); ?></button>
 	<?php } else {
-		_e( 'There is no extra option of this room', 'wp-hotel-booking' );
+		_e( 'There is no extra option of this room', 'resoto' );
 	} ?>
 </form>

@@ -1,6 +1,6 @@
 <?php
 	$header_layout = get_theme_mod( 'resoto_header_layout', 'layout1' );
-	$enable_top_header = get_theme_mod( 'resoto_enable_top_header', 1 );
+	$enable_top_header = get_theme_mod( 'resoto_enable_top_header', 0 );
 	$contact_number = get_theme_mod( 'resoto_contact_number', '' );
 	$email = get_theme_mod( 'resoto_email', '' );
 	$time = get_theme_mod( 'resoto_time', '' );

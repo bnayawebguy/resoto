@@ -71,7 +71,7 @@ defined( 'ABSPATH' ) || exit(); ?>
 					?>
 					<li>
 						<?php if( isset( $feature['icon'] ) ) : ?>
-							<span class="icon <?php esc_attr_e( $feature['icon'] ); ?>" ></span>
+							<span class="icon <?php echo esc_attr( $feature['icon'] ); ?>" ></span>
 						<?php endif; ?>
 
 						<?php if( isset( $feature['name'] ) ) : ?>
@@ -90,7 +90,7 @@ defined( 'ABSPATH' ) || exit(); ?>
 		do_action( 'hotel_booking_loop_room_price' );
 
 		?>
-		<a href="<?php the_permalink(); ?>" class="view-more-btn"><?php esc_html_e( $view_more_txt ); ?></a>
+		<a href="<?php the_permalink(); ?>" class="view-more-btn"><?php echo esc_html( $view_more_txt ); ?></a>
 		<?php
 
 		echo "</div>";

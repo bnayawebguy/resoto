@@ -31,13 +31,13 @@ $cart = WP_Hotel_Booking::instance()->cart; ?>
 			<table class="hb_table">
 				<thead>
 				<tr>
-					<th class="hb_room_type"><?php _e( 'Room type', 'wp-hotel-booking' ); ?></th>
-					<th class="hb_capacity"><?php _e( 'Capacity', 'wp-hotel-booking' ); ?></th>
-					<th class="hb_quantity"><?php _e( 'Quantity', 'wp-hotel-booking' ); ?></th>
-					<th class="hb_check_in"><?php _e( 'Check - in', 'wp-hotel-booking' ); ?></th>
-					<th class="hb_check_out"><?php _e( 'Check - out', 'wp-hotel-booking' ); ?></th>
-					<th class="hb_night"><?php _e( 'Night', 'wp-hotel-booking' ); ?></th>
-					<th class="hb_gross_total"><?php _e( 'Gross Total', 'wp-hotel-booking' ); ?></th>
+					<th class="hb_room_type"><?php _e( 'Room type', 'resoto' ); ?></th>
+					<th class="hb_capacity"><?php _e( 'Capacity', 'resoto' ); ?></th>
+					<th class="hb_quantity"><?php _e( 'Quantity', 'resoto' ); ?></th>
+					<th class="hb_check_in"><?php _e( 'Check - in', 'resoto' ); ?></th>
+					<th class="hb_check_out"><?php _e( 'Check - out', 'resoto' ); ?></th>
+					<th class="hb_night"><?php _e( 'Night', 'resoto' ); ?></th>
+					<th class="hb_gross_total"><?php _e( 'Gross Total', 'resoto' ); ?></th>
 				</tr>
 				</thead>
 
@@ -57,7 +57,7 @@ $cart = WP_Hotel_Booking::instance()->cart; ?>
 							<td class="hb_room_type"<?php echo defined( 'WPHB_EXTRA_FILE' ) && $cart_extra ? ' rowspan="' . ( count( $cart_extra ) + 2 ) . '"' : '' ?>>
 								<a href="<?php echo esc_url( get_permalink( $room->ID ) ); ?>"><?php echo apply_filters( 'hb_checkout_room_name', $room->name, $room->ID ); ?><?php printf( '%s', $room->capacity_title ? ' (' . $room->capacity_title . ')' : '' ); ?></a>
 							</td>
-							<td class="hb_capacity"><?php echo sprintf( _n( '%d adult', '%d adults', $room->capacity, 'wp-hotel-booking' ), $room->capacity ); ?> </td>
+							<td class="hb_capacity"><?php echo sprintf( _n( '%d adult', '%d adults', $room->capacity, 'resoto' ), $room->capacity ); ?> </td>
 							<td class="hb_quantity"><?php printf( '%s', $num_of_rooms ); ?></td>
 							<td class="hb_check_in"><?php echo date_i18n( hb_get_date_format(), strtotime( $room->get_data( 'check_in_date' ) ) ) ?></td>
 							<td class="hb_check_out"><?php echo date_i18n( hb_get_date_format(), strtotime( $room->get_data( 'check_out_date' ) ) ) ?></td>
@@ -74,7 +74,7 @@ $cart = WP_Hotel_Booking::instance()->cart; ?>
 				<?php do_action( 'hotel_booking_before_cart_total' ); ?>
 
 				<tr class="hb_sub_total">
-					<td colspan="7"><?php _e( 'Sub Total', 'wp-hotel-booking' ); ?>
+					<td colspan="7"><?php _e( 'Sub Total', 'resoto' ); ?>
 						<span class="hb-align-right hb_sub_total_value">
                         <?php echo hb_format_price( $cart->sub_total ); ?>
                     </span>
@@ -84,9 +84,9 @@ $cart = WP_Hotel_Booking::instance()->cart; ?>
 				<?php if ( $tax = hb_get_tax_settings() ) { ?>
 					<tr class="hb_advance_tax">
 						<td colspan="7">
-							<?php _e( 'Tax', 'wp-hotel-booking' ); ?>
+							<?php _e( 'Tax', 'resoto' ); ?>
 							<?php if ( $tax < 0 ) { ?>
-								<span><?php printf( __( '(price including tax)', 'wp-hotel-booking' ) ); ?></span>
+								<span><?php printf( __( '(price including tax)', 'resoto' ) ); ?></span>
 							<?php } ?>
 							<span class="hb-align-right"><?php echo apply_filters( 'hotel_booking_cart_tax_display', hb_format_price( $cart->total - $cart->sub_total ) ); // abs( $tax * 100 ) . '%' ?></span>
 						</td>
@@ -95,7 +95,7 @@ $cart = WP_Hotel_Booking::instance()->cart; ?>
 
 				<tr class="hb_advance_grand_total">
 					<td colspan="7">
-						<?php _e( 'Grand Total', 'wp-hotel-booking' ); ?>
+						<?php _e( 'Grand Total', 'resoto' ); ?>
 						<span class="hb-align-right hb_grand_total_value"><?php echo hb_format_price( $cart->total ); ?></span>
 					</td>
 				</tr>
@@ -104,7 +104,7 @@ $cart = WP_Hotel_Booking::instance()->cart; ?>
 				<?php if ( $advance_payment = $cart->advance_payment ) { ?>
 					<tr class="hb_advance_payment">
 						<td colspan="7">
-							<?php printf( __( 'Advance Payment (%s%% of Grand Total)', 'wp-hotel-booking' ), hb_get_advance_payment() ); ?>
+							<?php printf( __( 'Advance Payment (%s%% of Grand Total)', 'resoto' ), hb_get_advance_payment() ); ?>
 							<span class="hb-align-right hb_advance_payment_value"><?php echo hb_format_price( $advance_payment ); ?></span>
 						</td>
 					</tr>
@@ -115,7 +115,7 @@ $cart = WP_Hotel_Booking::instance()->cart; ?>
 									<input type="checkbox" name="pay_all" />
 									<span class="checkmark"></span>
 									<p>
-										<?php _e( 'I want to pay all', 'wp-hotel-booking' ); ?>
+										<?php _e( 'I want to pay all', 'resoto' ); ?>
 									</p>
 								</label>
 							</td>
@@ -126,7 +126,7 @@ $cart = WP_Hotel_Booking::instance()->cart; ?>
 			</table>
 
 			<?php if ( ! is_user_logged_in() && ! hb_settings()->get( 'guest_checkout' ) ) { ?>
-				<?php printf( __( 'You have to <strong><a href="%s">login</a></strong> or <strong><a href="%s">register</a></strong> to checkout.', 'wp-hotel-booking' ), wp_login_url( hb_get_checkout_url() ), wp_registration_url() ) ?>
+				<?php printf( __( 'You have to <strong><a href="%1$s">login</a></strong> or <strong><a href="%2$s">register</a></strong> to checkout.', 'resoto' ), wp_login_url( hb_get_checkout_url() ), wp_registration_url() ) ?>
 			<?php } else { ?>
 				<?php hb_get_template( 'checkout/customer.php', array( 'customer' => $customer ) ); ?>
 				<?php hb_get_template( 'checkout/payment-method.php', array( 'customer' => $customer ) ); ?>
@@ -143,12 +143,12 @@ $cart = WP_Hotel_Booking::instance()->cart; ?>
 					<p>
 						<label>
 							<input type="checkbox" name="tos" value="1" />
-							<?php printf( __( 'I agree with ', 'wp-hotel-booking' ) . '<a href="%s" target="_blank">%s</a>', get_permalink( $tos_page_id ), get_the_title( $tos_page_id ) ); ?>
+							<?php printf( __( 'I agree with ', 'resoto' ) . '<a href="%s" target="_blank">%s</a>', get_permalink( $tos_page_id ), get_the_title( $tos_page_id ) ); ?>
 						</label>
 					</p>
 				<?php } ?>
 				<p>
-					<button type="submit" class="hb_button"><?php _e( 'Check out', 'wp-hotel-booking' ); ?></button>
+					<button type="submit" class="hb_button"><?php _e( 'Check out', 'resoto' ); ?></button>
 				</p>
 
 			<?php } ?>

@@ -83,24 +83,26 @@
 				?>
 			</nav><!-- #site-navigation -->
 
-			<div class="resoto-search-hotelcart">
-				<?php if( $show_search ) : ?>
-					<div class="resoto-search">
-						<span class="lni-search"></span>
-						<div class="resoto-search-form">
-							<?php get_search_form(); ?>
-							<span class="lni-close"></span>
+			<?php if( $show_search || $show_hotelcart ) : ?>
+				<div class="resoto-search-hotelcart">
+					<?php if( $show_search ) : ?>
+						<div class="resoto-search">
+							<span class="lni-search"></span>
+							<div class="resoto-search-form">
+								<?php get_search_form(); ?>
+								<span class="lni-close"></span>
+							</div>
 						</div>
-					</div>
-				<?php endif; ?>
+					<?php endif; ?>
 
-				<?php if( $show_hotelcart ) : ?>
-					<div class="resoto-hotelcart">
-						<span class="lni-cart"><?php resoto_get_cart_items_count(); ?></span>
-						<?php do_shortcode( '[hotel_booking_mini_cart]' ); ?>
-					</div>
-				<?php endif; ?>
-			</div>
+					<?php if( $show_hotelcart ) : ?>
+						<div class="resoto-hotelcart">
+							<span class="lni-cart"><?php resoto_get_cart_items_count(); ?></span>
+							<?php do_shortcode( '[hotel_booking_mini_cart]' ); ?>
+						</div>
+					<?php endif; ?>
+				</div>
+			<?php endif; ?>
 		</div> <!-- .rcontainer -->
 	</div>
 </header><!-- #masthead -->

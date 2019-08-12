@@ -8,10 +8,16 @@
 	$twitter = get_theme_mod( 'resoto_twitter', '' );
 	$instagram = get_theme_mod( 'resoto_instagram', '' );
 	$youtube = get_theme_mod( 'resoto_youtube', '' );
+
+	$sh_class = '';
 	$show_search = get_theme_mod( 'resoto_show_search', 1 );
 	$show_hotelcart = get_theme_mod( 'resoto_show_hotelcart', 1 );
+
+	if( $show_search || $show_hotelcart ) {
+		$sh_class = 'show-sc';
+	}
 ?>
-<header id="masthead" class="site-header <?php echo esc_attr( $header_layout ); ?>">
+<header id="masthead" class="site-header <?php echo esc_attr( $header_layout ); ?> <?php echo esc_attr( $sh_class ); ?>">
 	<?php if( $enable_top_header ) : ?>
 		<div class="top-header">
 			<div class="rcontainer">

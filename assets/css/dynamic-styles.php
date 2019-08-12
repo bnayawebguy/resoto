@@ -4,6 +4,17 @@
 
 		$custom_css = "";
 
+		/** Slider Text Color **/
+		$caption_text_color = get_theme_mod( 'resoto_caption_text_color', '#616161' );
+		if( $caption_text_color ) {
+			$custom_css .= "
+				.resoto-slider .caption-text .slide-title,
+				.resoto-slider .caption-text .text {
+					color: $caption_text_color;
+				}
+			";
+		}
+
 		/** Page Banner **/
 		$banner_bgcolor = get_theme_mod( 'resoto_page_banner_bgcolor', '' );
 		$banner_bgimage = get_theme_mod( 'resoto_page_banner_bgimage', '' );
@@ -26,7 +37,7 @@
 
 		if( $banner_textcolor ) {
 			$custom_css .= "
-				.resoto-banner,
+				.resoto-banner h2.page-title,
 				.resoto-banner a{
 					color: $banner_textcolor;
 				}
@@ -101,7 +112,11 @@
 					header.layout1 .main-navigation ul li a:hover,
 					.is-style-outline .wp-block-button__link,
 					.page-links span,
-					.page-links a:hover {
+					.page-links a:hover,
+					.site-footer.layout1 ul li a:hover,
+					.site-footer.layout1 ul li a:focus,
+					.site-footer.layout1 .tagcloud a:hover,
+					.site-footer.layout1 .tagcloud a:focus {
 						color: $tpl_color;
 					}
 				";
@@ -152,7 +167,8 @@
 					.nav-previous a,
 					.nav-next a,
 					.wp-block-button__link,
-					.wp-block-file a.wp-block-file__button {
+					.wp-block-file a.wp-block-file__button,
+					.site-footer.layout1 .tnp-widget-minimal input.tnp-submit {
 						background-color: $tpl_color;
 					}
 				";

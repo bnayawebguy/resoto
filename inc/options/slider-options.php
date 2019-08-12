@@ -10,57 +10,55 @@
 		) );
 
 			/** Enable/Disable Top Header **/
-			Kirki::add_field( 'resoto_enable_slider', [
+			Kirki::add_field( 'resoto_enable_slider', array(
 				'type'        => 'switch',
 				'settings'    => 'resoto_enable_slider',
 				'label'       => esc_html__( 'Enable Slider', 'resoto' ),
 				'section'     => 'resoto_slider_options',
 				'default'     => '1',
-				'choices'     => [
+				'choices'     => array(
 					'on'  => esc_html__( 'Enable', 'resoto' ),
 					'off' => esc_html__( 'Disable', 'resoto' ),
-				],
-			] );
+				),
+			) );
 
-				/** Slider Category **/
-				Kirki::add_field( 'resoto_slider_category', [
-					'type'        => 'select',
-					'settings'    => 'resoto_slider_category',
-					'label'       => esc_html__( 'Slider Category', 'resoto' ),
-					'section'     => 'resoto_slider_options',
-					'default'     => 0,
-					'multiple'    => 1,
-					'choices'     => $category_list
-				] );
+			/** Slider Category **/
+			Kirki::add_field( 'resoto_slider_category', array(
+				'type'        => 'select',
+				'settings'    => 'resoto_slider_category',
+				'label'       => esc_html__( 'Slider Category', 'resoto' ),
+				'description' => esc_html__( 'select a category for the slider', 'resoto' ),
+				'section'     => 'resoto_slider_options',
+				'default'     => 0,
+				'multiple'    => 1,
+				'choices'     => $category_list
+			) );
 
-				/** Slider Layout **/
-				Kirki::add_field( 'resoto_slider_layout', [
-					'type'        => 'radio-image',
-					'settings'    => 'resoto_slider_layout',
-					'label'       => esc_html__( 'Slider Layout', 'resoto' ),
-					'section'     => 'resoto_slider_options',
-					'default'     => 'layout1',
-					'choices'     => [
-						'layout1'   => get_template_directory_uri() . '/assets/images/slider-layout1.png',
-						'layout2' => get_template_directory_uri() . '/assets/images/slider-layout2.png',
-						'layout3'  => get_template_directory_uri() . '/assets/images/slider-layout3.png',
-					],
-				] );
+			/** Slider Layout **/
+			Kirki::add_field( 'resoto_slider_layout', array(
+				'type'        => 'select',
+				'settings'    => 'resoto_slider_layout',
+				'label'       => esc_html__( 'Slider Layout', 'resoto' ),
+				'description' => esc_html__( 'select a layout for the slider', 'resoto' ),
+				'section'     => 'resoto_slider_options',
+				'default'     => 'layout1',
+				'multiple'    => 1,
+				'choices'     => array(
+					'layout1' => esc_html__( 'Left Aligned', 'resoto' ),
+					'layout2' => esc_html__( 'Center Aligned', 'resoto' ),
+					'layout3' => esc_html__( 'Right Aligned', 'resoto' ),
+				),
+			) );
 
-				/** Slider Layout **/
-				Kirki::add_field( 'resoto_slider_layout', [
-					'type'        => 'select',
-					'settings'    => 'resoto_slider_layout',
-					'label'       => esc_html__( 'Slider Layout', 'resoto' ),
-					'section'     => 'resoto_slider_options',
-					'default'     => 'layout1',
-					'multiple'    => 1,
-					'choices'     => [
-						'layout1' => esc_html__( 'Left Aligned', 'resoto' ),
-						'layout2' => esc_html__( 'Center Aligned', 'resoto' ),
-						'layout3' => esc_html__( 'Right Aligned', 'resoto' ),
-					],
-				] );
+			/** Slider Text Color **/
+			Kirki::add_field( 'resoto_caption_text_color', array(
+				'type'        => 'color',
+				'settings'    => 'resoto_caption_text_color',
+				'label'       => esc_html__( 'Caption Text Color', 'resoto' ),
+				'description' => esc_html__( 'set the color for the caption text', 'resoto' ),
+				'section'     => 'resoto_slider_options',
+				'default'     => '#616161',
+			) );
 
 	}
 

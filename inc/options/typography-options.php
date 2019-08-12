@@ -24,28 +24,29 @@
 			) );
 
 				/** Heading 1 Typography **/
-				Kirki::add_field( 'resoto_heading', [
+				Kirki::add_field( 'resoto_heading', array(
 					'type'        => 'typography',
 					'settings'    => 'resoto_heading',
 					'label'       => esc_html__( 'Heading', 'resoto' ),
+					'description' => esc_html__( 'configure fonts for heading texts', 'resoto' ),
 					'section'     => 'resoto_heading_typo',
-					'choices' => [
-						'fonts' => [
+					'choices' => array(
+						'fonts' => array(
 							'google' => $gfonts,
-						],
-					],
-					'default'     => [
+						),
+					),
+					'default'     => array(
 						'font-family'    => 'Poppins',
 						'variant'        => '500',
 						'color'          => '#616161',
-					],
+					),
 					'transport'   => 'auto',
-					'output'      => [
-						[
+					'output'      => array(
+						array(
 							'element' => 'h1',
-						],
-					],
-				] );
+						),
+					),
+				) );
 
 			/** Body Section **/
 			Kirki::add_section( 'resoto_body_typo', array(
@@ -54,28 +55,29 @@
 			) );
 
 				/** Body Typography **/
-				Kirki::add_field( 'resoto_body', [
+				Kirki::add_field( 'resoto_body', array(
 					'type'        => 'typography',
 					'settings'    => 'resoto_body',
 					'label'       => esc_html__( 'Body', 'resoto' ),
+					'description' => esc_html__( 'configure fonts for body texts', 'resoto' ),
 					'section'     => 'resoto_body_typo',
-					'choices' => [
-						'fonts' => [
+					'choices' => array(
+						'fonts' => array(
 							'google' => $gfonts,
-						],
-					],
-					'default'     => [
+						),
+					),
+					'default'     => array(
 						'font-family'    => 'Montserrat',
 						'variant'        => 'regular',
 						'color'          => '#616161',
-					],
+					),
 					'transport'   => 'auto',
-					'output'      => [
-						[
+					'output'      => array(
+						array(
 							'element' => 'body',
-						],
-					],
-				] );
+						),
+					),
+				) );
 
 			/** Widget Section **/
 			Kirki::add_section( 'resoto_widget_typo', array(
@@ -84,28 +86,29 @@
 			) );
 
 				/** Widget Title Typography **/
-				Kirki::add_field( 'resoto_widget_title', [
+				Kirki::add_field( 'resoto_widget_title', array(
 					'type'        => 'typography',
 					'settings'    => 'resoto_widget_title',
 					'label'       => esc_html__( 'Widget Title', 'resoto' ),
+					'description' => esc_html__( 'configure fonts for widget title', 'resoto' ),
 					'section'     => 'resoto_widget_typo',
-					'choices' => [
-						'fonts' => [
+					'choices' => array(
+						'fonts' => array(
 							'google' => $gfonts,
-						],
-					],
-					'default'     => [
+						),
+					),
+					'default'     => array(
 						'font-family'    => 'Poppins',
 						'variant'        => '600',
 						'color'          => '#616161',
-					],
+					),
 					'transport'   => 'auto',
-					'output'      => [
-						[
+					'output'      => array(
+						array(
 							'element' => '.right-sidebar #secondary .widget-title, .right-sidebar .widget_hb_widget_cart h3, .sroom-sidebar .widget h3',
-						],
-					],
-				] );
+						),
+					),
+				) );
 
 	}
 

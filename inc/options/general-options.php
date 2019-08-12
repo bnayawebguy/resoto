@@ -8,45 +8,46 @@
 		) );
 
 			/** Template Color **/
-			Kirki::add_field( 'resoto_template_color', [
+			Kirki::add_field( 'resoto_template_color', array(
 				'type'        => 'radio-image',
 				'settings'    => 'resoto_template_color',
 				'label'       => esc_html__( 'Template Color', 'resoto' ),
 				'section'     => 'resoto_general_options',
 				'priority'	  => '1',
 				'default'     => 'orange',
-				'choices'     => [
+				'description' => esc_html__( 'select the template color for site', 'resoto' ),
+				'choices'     => array(
 					'orange'   => get_template_directory_uri() . '/assets/images/orange.png',
 					'brown' => get_template_directory_uri() . '/assets/images/brown.png',
 					'blue' => get_template_directory_uri() . '/assets/images/blue.png',
-				],
-			] );
+				),
+			) );
 
 			/** Enable Preloader **/
-			Kirki::add_field( 'resoto_enable_preloader', [
+			Kirki::add_field( 'resoto_enable_preloader', array(
 				'type'        => 'switch',
 				'settings'    => 'resoto_enable_preloader',
 				'label'       => esc_html__( 'Enable Preloader', 'resoto' ),
 				'section'     => 'resoto_general_options',
 				'default'     => '1',
-				'choices'     => [
+				'choices'     => array(
 					'on'  => esc_html__( 'Show', 'resoto' ),
 					'off' => esc_html__( 'Hide', 'resoto' ),
-				],
-			] );
+				),
+			) );
 
 			/** Enable Go to Top option **/
-			Kirki::add_field( 'resoto_goto_top_link', [
+			Kirki::add_field( 'resoto_goto_top_link', array(
 				'type'        => 'switch',
 				'settings'    => 'resoto_goto_top_link',
 				'label'       => esc_html__( 'Enable Goto Top', 'resoto' ),
 				'section'     => 'resoto_general_options',
 				'default'     => '1',
-				'choices'     => [
+				'choices'     => array(
 					'on'  => esc_html__( 'Enable', 'resoto' ),
 					'off' => esc_html__( 'Disable', 'resoto' ),
-				],
-			] );
+				),
+			) );
 
 	}
 

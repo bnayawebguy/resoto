@@ -57,17 +57,14 @@
 			<?php
 				if( $copyright_text ) {
 					echo wp_kses_post( $copyright_text );
+				} else {
+					echo esc_html__( '&copy; 2019 | All Rights Reserved', 'resoto' );
 				}
-				else {
 			?>
-			<?php echo esc_html__( '&copy; 2019 | All Rights Reserved', 'resoto' ); ?>
 			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'resoto' ), 'resoto', '<a href="https://mysticalthemes.com/">MysticalThemes</a>' );
-				?>
 			<?php
-				}
+			/* translators: 1: Theme name, 2: Theme author. */
+			printf( esc_html__( 'Theme: %1$s by %2$s.', 'resoto' ), 'resoto', '<a href="https://mysticalthemes.com/">MysticalThemes</a>' );
 			?>
 		</div>
 	</div> <!-- .site-info -->

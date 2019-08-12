@@ -21,7 +21,7 @@ defined( 'ABSPATH' ) || exit(); ?>
 		foreach( $post_features_ids[0] as $post_id ) {
 			$post_features[$post_id]['name'] = get_the_title( $post_id );
 			$post_features[$post_id]['unit'] = get_post_meta( $post_id, 'tp_hb_extra_room_respondent_name', true );
-			$post_features[$post_id]['icon'] = get_post_meta( $post_id, 'resoto_eo_icon', true );
+			$post_features[$post_id]['icon'] = get_post_meta( $post_id, 'mystical_eo_icon', true );
 		}
 	}
 

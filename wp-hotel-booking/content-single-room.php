@@ -28,7 +28,7 @@ if ( post_password_required() ) {
 
 <?php
 	$room_class = '';
-	$room_class = ( is_active_sidebar( 'hb-room-sidebar' ) ) ? ' has-sidebar' : '';
+	$room_class = ( is_active_sidebar( 'hb-room-sidebar' ) ) ? ' has-sidebar' : ' no-sidebar';
 ?>
 <div class="resoto-room-wrap<?php echo esc_attr( $room_class ); ?>">
 

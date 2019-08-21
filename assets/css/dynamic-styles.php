@@ -116,7 +116,13 @@
 					.site-footer.layout1 ul li a:hover,
 					.site-footer.layout1 ul li a:focus,
 					.site-footer.layout1 .tagcloud a:hover,
-					.site-footer.layout1 .tagcloud a:focus {
+					.site-footer.layout1 .tagcloud a:focus,
+					.woocommerce ul.products li.product .price,
+					.woocommerce div.product p.price,
+					.woocommerce div.product p.price,
+					.woocommerce div.product span.price,
+					.woocommerce-message::before,
+					.woocommerce-info::before {
 						color: $tpl_color;
 					}
 				";
@@ -168,7 +174,19 @@
 					.nav-next a,
 					.wp-block-button__link,
 					.wp-block-file a.wp-block-file__button,
-					.site-footer.layout1 .tnp-widget-minimal input.tnp-submit {
+					.site-footer.layout1 .tnp-widget-minimal input.tnp-submit,
+					.woocommerce span.onsale,
+					.woocommerce #respond input#submit,
+					.woocommerce a.button,
+					.woocommerce button.button,
+					.woocommerce input.button,
+					.woocommerce nav.woocommerce-pagination ul li a,
+					.woocommerce button.button.alt.disabled,
+					.woocommerce button.button.alt.disabled:hover,
+					.woocommerce #respond input#submit.alt,
+					.woocommerce a.button.alt,
+					.woocommerce button.button.alt,
+					.woocommerce input.button.alt {
 						background-color: $tpl_color;
 					}
 				";
@@ -182,7 +200,9 @@
 					.sroom-sidebar .hotel-booking-search button,
 					.hb-select-extra-results .check-wrap input:checked ~ .checkmark,
 					.hb_payment_all .check-wrap input:checked ~ .checkmark,
-					.is-style-outline .wp-block-button__link {
+					.is-style-outline .wp-block-button__link,
+					.woocommerce-message,
+					.woocommerce-info {
 						border-color: $tpl_color;
 					}
 				";

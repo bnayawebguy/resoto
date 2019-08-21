@@ -80,6 +80,14 @@ if ( ! function_exists( 'resoto_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+
+		/** 
+		* Adding Woocommerce Compatibility
+		*/
+		add_theme_support( 'woocommerce' );
+		add_theme_support( 'wc-product-gallery-slider' );
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
 	}
 endif;
 add_action( 'after_setup_theme', 'resoto_setup' );
@@ -292,6 +300,9 @@ require get_template_directory() . '/inc/options/theme-options.php';
 
 /** Resoto Functions **/
 require get_template_directory() . '/inc/resoto-functions.php';
+
+/** Woocommerce **/
+require get_template_directory() . '/inc/woocommerce.php';
 
 /** Resoto Metaboxes **/
 require get_template_directory() . '/inc/metabox.php';

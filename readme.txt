@@ -36,10 +36,11 @@ Resoto includes support for Elementor and WP Hotel Booking
 = 1.0.0 - August 2 2019 =
 * Initial release
 
-= 1.0.1 - August 5 2019 =
+= 1.0.1 - August 18 2019 =
 * Fixed Room Single Page Layout without sidebar
 * Fixed 404 Page
 * Fixed Blog Grid Issue
+* Fixed Dynamic Styles Issues
 
 == Resources ==
 * Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)

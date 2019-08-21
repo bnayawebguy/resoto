@@ -18,13 +18,16 @@ jQuery(document).ready(function($){
 	new WOW().init();
 
 	/** Resoto Main Slider **/
+	var rtl_site = false;
+	rtl_site = $('body').hasClass('rtl') ? true : false;
 	var resoto_slider = $('.resoto-slider').owlCarousel({
 		items: 1,
 		nav: true,
 		navText: ['<i class="lni-angle-double-left"></i>', '<i class="lni-angle-double-right"></i>'],
 		navElement: 'span',
 		loop: true,
-		dots: true
+		dots: true,
+		rtl: rtl_site
 	});
 
 	resoto_slider.on('changed.owl.carousel', function(event) {

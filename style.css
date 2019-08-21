@@ -3,12 +3,12 @@ Theme Name: Resoto
 Theme URI: https://mysticalthemes.com/wordpress-themes/resoto
 Author: bnayawpguy
 Author URI: https://mysticalthemes.com
-Description: Resoto Hotel WordPress Theme is a perfect template designed for resort, hotel, villas , guesthouse or other travel tourism and hotel business. The template is based on Elementor plugin which gives you wide range of opportunity to uniquely design attractive beautiful website. The template is based on WP Hotel Booking plugin which provides the options to configure the hotel accomodations. The template is not only limited to the resorts and hotel website you may also use the template to create a stunning corporate, blog website and many more.
-Version: 1.0.0
+Description: Resoto Hotel WordPress Theme is a perfect template designed for resort, hotel, villas , guesthouse or other travel tourism and hotel business. The template is based on Elementor plugin which gives you wide range of opportunity to uniquely design attractive beautiful website. The template is based on WP Hotel Booking plugin which provides the options to configure the hotel accomodations. The template is not only limited to the resorts and hotel website you may also use the template to create a stunning corporate, blog website and many more. Demo at http://demo.mysticalthemes.com/resoto
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: resoto
-Tags: blog, holiday, food-and-drink, one-column, two-columns, right-sidebar, footer-widgets, custom-menu, custom-logo, featured-images, threaded-comments, full-width-template, rtl-language-support, translation-ready, theme-options, sticky-post
+Tags: blog, holiday, e-commerce, one-column, two-columns, right-sidebar, footer-widgets, custom-menu, custom-logo, featured-images, threaded-comments, full-width-template, translation-ready, theme-options, sticky-post
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -3420,4 +3420,152 @@ ol.wp-block-latest-comments li:last-child {
             transform: perspective(140px) rotateY(180deg);
     opacity: 0; 
   }
+}
+
+/** Woocommerce Styles **/
+.woocommerce .woocommerce-ordering select {
+	font-size: 12px;
+    padding: 10px;
+}
+
+.woocommerce nav.woocommerce-pagination ul,
+.woocommerce nav.woocommerce-pagination ul li {
+    border: none;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a,
+.woocommerce nav.woocommerce-pagination ul li span {
+	display: inline-block;
+	margin-right: 10px;
+    transition: all 0.5s ease;
+    padding: 5px 10px;
+    color: #fff;
+    background-color: #ec6a2a;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a:focus,
+.woocommerce nav.woocommerce-pagination ul li a:hover,
+.woocommerce nav.woocommerce-pagination ul li span.current {
+    background: #000000;
+}
+
+.woocommerce ul.products li.product .price {
+	color: #ec6a2a;
+}
+
+.woocommerce span.onsale {
+	background-color: #ec6a2a;
+}
+
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+	border-radius: 0;
+    background-color: #ec6a2a;
+    font-weight: 600;
+    color: #fff;
+    padding: 10px 15px;
+}
+
+.woocommerce #respond input#submit:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover {
+	background-color: #000000;
+	color: #ffffff;
+}
+
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt {
+	background-color: #ec6a2a;
+	color: #ffffff;
+    padding: 10px 20px;
+	transition: all 0.4s ease;
+}
+
+.woocommerce #respond input#submit.alt:hover,
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover,
+.woocommerce input.button.alt:hover {
+	background-color: #000000;
+}
+
+.woocommerce .quantity .qty,
+.woocommerce #review_form #respond textarea,
+.woocommerce #content table.cart td.actions .input-text,
+.woocommerce table.cart td.actions .input-text,
+.woocommerce-page #content table.cart td.actions .input-text,
+.woocommerce-page table.cart td.actions .input-text {
+	border-radius: 0px;
+}
+
+.woocommerce table.cart td.actions .input-text,
+.woocommerce-page #content table.cart td.actions .input-text,
+.woocommerce-page table.cart td.actions .input-text {
+	width: 120px;
+    padding: 3px 8px;
+}
+
+.woocommerce div.product p.price,
+.woocommerce div.product span.price,
+.woocommerce-message::before,
+.woocommerce-info::before {
+	color: #ec6a2a;
+}
+
+.woocommerce-message,
+.woocommerce-info {
+	border-color: #ec6a2a;
+}
+
+.woocommerce table.shop_table {
+    border-radius: 0px;
+    border: 1px solid #efefef;
+}
+
+.woocommerce table td, .woocommerce table th {
+	border: 1px solid #efefef;	
+}
+
+.woocommerce form .form-row input.input-text {
+    border-radius: 0px;
+    padding: 10px 15px;
+}
+
+.woocommerce form .form-row textarea {
+    width: 250px !important;
+    padding: 10px;
+    border-radius: 0px;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation ul a {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #ec6a2a;
+    width: 100%;
+    border-bottom: 1px solid white;
+    color: #fff;
+    transition: all 0.4s ease;
+}
+
+.woocommerce div.product form.cart .variations td.label {
+    vertical-align: middle;
+}
+
+.woocommerce div.product form.cart .variations select {
+	padding: 10px 15px;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation ul a:hover,
+.woocommerce-account .woocommerce-MyAccount-navigation ul li.is-active a {
+    background: #000000;
 }
